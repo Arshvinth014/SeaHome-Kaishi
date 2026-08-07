@@ -6,7 +6,6 @@ import {
   CalendarCheck,
   Users,
   ChevronDown,
-  Sparkles,
   Menu,
   X,
   type LucideIcon,
@@ -103,11 +102,11 @@ const SeahomeNavbar: React.FC = () => {
           {/* Get Started Button */}
           <button
             type="button"
-            onClick={() => handleGo('/seahome-real-estates/rental')}
+            onClick={() => handleGo('/home')}
             className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 px-3.5 py-2 text-xs font-semibold text-white shadow-md shadow-purple-500/20 transition-all hover:scale-[1.02] hover:from-purple-700 hover:to-indigo-700 focus:outline-hidden sm:px-4 sm:text-sm"
           >
-            <Sparkles className="h-4 w-4 shrink-0" />
-            <span>Get Started</span>
+            <img src="/BlueBirdBuyPage.png" alt="Sora" className="h-8 w-8 shrink-0" />
+            <span>Home</span>
           </button>
 
           {/* Seahome Real Estates Logo & Title */}
@@ -120,7 +119,7 @@ const SeahomeNavbar: React.FC = () => {
             </div>
             <div className="min-w-0 leading-tight">
               <h1 className="truncate text-base font-bold bg-gradient-to-r from-sky-700 to-sky-900 bg-clip-text text-transparent sm:text-lg">
-                Seahome Real Estates
+                Seahome Japan Rentals
               </h1>
               <p className="hidden truncate text-xs font-medium text-gray-500 sm:block">
                 Properties.Buy.Sell.Lend.Bookings with Kaishi
