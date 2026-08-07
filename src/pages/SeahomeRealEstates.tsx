@@ -66,9 +66,8 @@ const HubCardButton: React.FC<{
   >
     {card.icon}
     <span
-      className={`line-clamp-2 font-semibold leading-snug text-sky-950 ${
-        large ? 'text-sm sm:text-base' : 'text-[11px] sm:text-xs'
-      }`}
+      className={`line-clamp-2 font-semibold leading-snug text-sky-950 ${large ? 'text-sm sm:text-base' : 'text-[11px] sm:text-xs'
+        }`}
     >
       {card.label}
     </span>
@@ -219,6 +218,13 @@ const SeahomeRealEstates: React.FC = () => {
             <span className="font-semibold text-sky-700">Kaishi Nihon × Seahome</span>
           </p>
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <Link
+              to="/invest"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-purple-600 to-sky-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:from-purple-700 hover:to-sky-800 sm:text-sm"
+            >
+              <Building2 className="h-4 w-4" />
+              Check Investments
+            </Link>
             <Link
               to="/"
               className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-purple-600 to-sky-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:from-purple-700 hover:to-sky-800 sm:text-sm"
