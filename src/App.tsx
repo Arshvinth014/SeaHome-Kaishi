@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, Outlet, useLocation } from 'react-router-dom';
 import SeahomeNavbar from './components/SeahomeNavbar';
 import SeahomeRealEstates from './pages/SeahomeRealEstates';
 import SeahomeRentalPage from './pages/SeahomeRentalPage';
@@ -7,6 +8,12 @@ import SeahomeRentalLineDetailPage from './pages/SeahomeRentalLineDetailPage';
 import SeahomeRentalStationResultsPage from './pages/SeahomeRentalStationResultsPage';
 import SeahomeRentalPropertyDetailPage from './pages/SeahomeRentalPropertyDetailPage';
 import SeahomeRentalFullMapPage from './pages/SeahomeRentalFullMapPage';
+import RentalShopPage from './pages/RentalShopPage';
+import RentalOfficePage from './pages/RentalOfficePage';
+import RentalLandPage from './pages/RentalLandPage';
+import ParkingPage from './pages/ParkingPage';
+import WarehousePage from './pages/WarehousePage';
+import RentalBuildingOtherPage from './pages/RentalBuildingOtherPage';
 
 // SeaHome Net Public pages
 import { Navbar } from './layouts/Navbar';
@@ -44,9 +51,19 @@ function SeahomeLayout() {
   );
 }
 
+function ScrollToTop() {
+  const location = useLocation();
+  useEffect(() => {
+    // Ensure the page starts at the top on route change
+    window.scrollTo({ top: 0, left: 0 });
+  }, [location.pathname]);
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route element={<PublicLayout />}>
           <Route index element={<HomePage />} />
@@ -63,6 +80,12 @@ function App() {
         <Route path="seahome-real-estates" element={<SeahomeLayout />}>
           <Route index element={<SeahomeRealEstates />} />
           <Route path="rental" element={<SeahomeRentalPage />} />
+          <Route path="rental-shop" element={<RentalShopPage />} />
+          <Route path="rental-office" element={<RentalOfficePage />} />
+          <Route path="rental-land" element={<RentalLandPage />} />
+          <Route path="parking" element={<ParkingPage />} />
+          <Route path="warehouse" element={<WarehousePage />} />
+          <Route path="rental-building-other" element={<RentalBuildingOtherPage />} />
           <Route
             path="rental/search-by-line-station/:locationSlug"
             element={<SeahomeRentalLineStationSearchPage />}

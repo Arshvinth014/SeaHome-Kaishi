@@ -171,12 +171,12 @@ const SeahomeRealEstates: React.FC = () => {
   };
 
   const rentGrid: HubCard[] = [
-    { label: 'Rental Shop', icon: iconWrap(<Store className="h-5 w-5" />), path: '/commercial-properties' },
-    { label: 'Rental Office', icon: iconWrap(<Building2 className="h-5 w-5" />), path: '/commercial-properties' },
-    { label: 'Rental Land', icon: iconWrap(<MapPin className="h-5 w-5" />), path: '/commercial-properties' },
-    { label: 'Parking', icon: iconWrap(<Car className="h-5 w-5" />), path: '/commercial-properties' },
-    { label: 'Warehouse', icon: iconWrap(<Warehouse className="h-5 w-5" />), path: '/commercial-properties' },
-    { label: 'Building / Other', icon: iconWrap(<Factory className="h-5 w-5" />), path: '/commercial-properties' },
+    { label: 'Rental Shop', icon: iconWrap(<Store className="h-5 w-5" />), path: '/seahome-real-estates/rental-shop' },
+    { label: 'Rental Office', icon: iconWrap(<Building2 className="h-5 w-5" />), path: '/seahome-real-estates/rental-office' },
+    { label: 'Rental Land', icon: iconWrap(<MapPin className="h-5 w-5" />), path: '/seahome-real-estates/rental-land' },
+    { label: 'Parking', icon: iconWrap(<Car className="h-5 w-5" />), path: '/seahome-real-estates/parking' },
+    { label: 'Warehouse', icon: iconWrap(<Warehouse className="h-5 w-5" />), path: '/seahome-real-estates/warehouse' },
+    { label: 'Building / Other', icon: iconWrap(<Factory className="h-5 w-5" />), path: '/seahome-real-estates/rental-building-other' },
   ];
 
   const buyResidential: HubCard[] = [
