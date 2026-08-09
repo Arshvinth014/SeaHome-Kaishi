@@ -6,7 +6,7 @@ import { MapPin, Building2, CircleDollarSign, Clock, LayoutGrid, TrendingUp, Gra
 import SeahomeRentalRegionList from '../components/seahome/SeahomeRentalRegionList';
 import SeahomeJapanMap, { type JapanMapSelection } from '../components/seahome/SeahomeJapanMap';
 import SeahomeRentalCityPanel from '../components/seahome/SeahomeRentalCityPanel';
-import SeahomeRentalCitySearchModal, { type RentalSearchModalContext, type CitySearchMethod } from '../components/seahome/SeahomeRentalCitySearchModal';
+import SeahomeRentalCitySearchModal, { type RentalSearchModalContext } from '../components/seahome/SeahomeRentalCitySearchModal';
 import type { RentalCity } from '../components/seahome/seahomeRentalCities';
 import { RENTAL_REGIONS, RENTAL_SIDE_FILTERS } from '../components/seahome/seahomeRentalData';
 import { rentalListingsUrl } from '../components/seahome/seahomeRentalLineSearchData';

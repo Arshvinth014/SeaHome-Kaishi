@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet, useLocation } from 'react-router-dom';
 import SeahomeNavbar from './components/SeahomeNavbar';
 import SeahomeRealEstates from './pages/SeahomeRealEstates';
