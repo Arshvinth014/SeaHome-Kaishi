@@ -122,11 +122,11 @@ export const STATIONS_TO_WATCH: NamedLink[] = [
 ];
 
 export const OTHER_PROPERTY_TYPES: NamedLink[] = [
-    { label: 'Store for Rent', path: '/properties?type=store' },
-    { label: 'Rental parking', path: '/properties?type=parking' },
-    { label: 'Leased land', path: '/properties?type=land' },
-    { label: 'Rental warehouse', path: '/properties?type=warehouse' },
-    { label: 'Rental and other', path: '/properties?type=other' },
+    { label: 'Store for Rent', path: '/seahome-real-estates/rental-shop' },
+    { label: 'Rental parking', path: '/seahome-real-estates/parking' },
+    { label: 'leased land', path: '/seahome-real-estates/rental-land' },
+    { label: 'Rental warehouse', path: '/seahome-real-estates/warehouse' },
+    { label: 'Rental and other', path: '/seahome-real-estates/rental-building-other' },
 ];
 
 export const SEARCH_TOOLS: NamedLink[] = [

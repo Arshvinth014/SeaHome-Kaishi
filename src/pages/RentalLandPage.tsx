@@ -32,7 +32,20 @@ const RentalLandPage: React.FC = () => {
 
     const openListings = useCallback(
         (path = '/properties') => {
+            if (!path) return;
             const normalized = path.startsWith('/') ? path : `/${path}`;
+            if (
+                normalized.startsWith('/seahome-real-estates') ||
+                normalized.startsWith('/rental-') ||
+                normalized.startsWith('/parking') ||
+                normalized.startsWith('/warehouse')
+            ) {
+                const target = normalized.startsWith('/seahome-real-estates')
+                    ? normalized
+                    : `/seahome-real-estates${normalized}`;
+                navigate(target);
+                return;
+            }
             navigate(rentalListingsUrl(normalized));
         },
         [navigate]

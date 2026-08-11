@@ -71,11 +71,11 @@ export const WHAT_S_NEW_LAND_LISTINGS: LandListingItem[] = [
 ];
 
 export const OTHER_PROPERTY_TYPES_LAND: NamedLink[] = [
-    { label: 'Store for Rent', path: '/properties?type=store' },
-    { label: 'Rental office', path: '/properties?type=office' },
-    { label: 'Rental parking', path: '/properties?type=parking' },
-    { label: 'Rental warehouse', path: '/properties?type=warehouse' },
-    { label: 'Rental and other', path: '/properties?type=other' },
+    { label: 'Store for Rent', path: '/seahome-real-estates/rental-shop' },
+    { label: 'rental office', path: '/seahome-real-estates/rental-office' },
+    { label: 'Rental parking', path: '/seahome-real-estates/parking' },
+    { label: 'Rental warehouse', path: '/seahome-real-estates/warehouse' },
+    { label: 'Rental and other', path: '/seahome-real-estates/rental-building-other' },
 ];
 
 export const SEARCH_TOOLS_LAND: NamedLink[] = [
