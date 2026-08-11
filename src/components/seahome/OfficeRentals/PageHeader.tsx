@@ -3,9 +3,17 @@ import { ChevronRight, Building2, Store, Home } from 'lucide-react';
 
 interface PageHeaderProps {
   totalListings?: string;
+  titlePrefix?: string;
+  titleHighlight?: string;
+  breadcrumbCurrent?: string;
 }
 
-export const PageHeader: React.FC<PageHeaderProps> = ({ totalListings = "72,710" }) => {
+export const PageHeader: React.FC<PageHeaderProps> = ({
+  totalListings = "72,710",
+  titlePrefix = "Search for",
+  titleHighlight = "rental property information for offices, vacant offices, and commercial spaces.",
+  breadcrumbCurrent = "Office for Rent",
+}) => {
   return (
     <div className="w-full mb-8">
       {/* 1. Top Breadcrumb & Decorative Skyline */}
@@ -21,10 +29,10 @@ export const PageHeader: React.FC<PageHeaderProps> = ({ totalListings = "72,710"
             Rental
           </a>
           <ChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-          <span className="text-gray-800 font-medium">Office for Rent</span>
+          <span className="text-gray-800 font-medium">{breadcrumbCurrent}</span>
         </nav>
 
-        {/* Subtle Decorative Building Watermark (matches top-right graphic in screenshot) */}
+        {/* Subtle Decorative Building Watermark */}
         <div className="hidden md:flex items-end space-x-1.5 text-blue-200/50 select-none pointer-events-none pr-2">
           <Home className="w-4 h-4" />
           <Building2 className="w-6 h-6" />
@@ -41,9 +49,9 @@ export const PageHeader: React.FC<PageHeaderProps> = ({ totalListings = "72,710"
         {/* Title Section */}
         <div className="max-w-3xl">
           <h1 className="text-xl sm:text-2xl md:text-[26px] font-extrabold text-gray-900 leading-snug tracking-tight">
-            Search for{" "}
+            {titlePrefix}{" "}
             <span className="text-blue-600">
-              rental property information for offices, vacant offices, and commercial spaces.
+              {titleHighlight}
             </span>
           </h1>
         </div>
