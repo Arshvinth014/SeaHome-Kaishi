@@ -196,12 +196,12 @@ const SeahomeRealEstates: React.FC = () => {
     label: 'Hotels',
     sub: 'Business, city & resort stays',
     icon: iconWrap(<Hotel className="h-6 w-6" strokeWidth={1.75} />),
-    path: '/properties',
+    path: '/seahome-real-estates/JapanHotelsPage',
   };
 
   const bookingsGrid: HubCard[] = [
-    { label: 'Villas', sub: 'Private homes & resorts', icon: iconWrap(<Palmtree className="h-5 w-5" />), path: '/properties' },
-    { label: 'Ryokan & onsen', sub: 'Traditional inns', icon: iconWrap(<Tent className="h-5 w-5" />), path: '/properties' },
+    { label: 'Villas', sub: 'Private homes & resorts', icon: iconWrap(<Palmtree className="h-5 w-5" />), path: '/seahome-real-estates/JapanVillasPage' },
+    { label: 'Ryokan & onsen', sub: 'Traditional inns', icon: iconWrap(<Tent className="h-5 w-5" />), path: '/seahome-real-estates/JapanRyokanOnsenPage' },
     { label: 'Guesthouses', sub: 'Hostels & budget stays', icon: iconWrap(<Users className="h-5 w-5" />), path: '/properties' },
     { label: 'Minpaku', sub: 'Short-term rentals', icon: iconWrap(<Home className="h-5 w-5" />), path: '/properties' },
     { label: 'Monthly stays', sub: 'Serviced apartments', icon: iconWrap(<Building2 className="h-5 w-5" />), path: '/properties' },

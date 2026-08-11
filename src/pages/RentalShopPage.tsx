@@ -12,7 +12,6 @@ const RentalShopPage: React.FC = () => {
     <div className="bg-gray-50/40 min-h-screen py-6">
       {/* Main Container - Spans full width without ads */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-
         {/* Modified Page Header Section */}
         <PageHeader totalListings="72,710" />
 
@@ -28,7 +27,6 @@ const RentalShopPage: React.FC = () => {
         {/* Section: Useful Guides */}
         <SectionHeader title="Use   ful tips for finding a store" />
         <UsefulGuides />
-
         {/* Bottom Section: Property Types, Terms & Sea Home Info */}
         <RentalShopBottom />
       </main>
