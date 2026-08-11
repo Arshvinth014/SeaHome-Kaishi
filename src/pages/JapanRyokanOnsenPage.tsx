@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import {
     ChevronDown,
-    ChevronLeft,
     ChevronRight,
     Heart,
     MapPin,
@@ -12,10 +11,6 @@ import {
     Minus,
     Plus,
     ArrowRight,
-    Waves,
-    Utensils,
-    Sparkles,
-    Mountain,
 } from 'lucide-react';
 
 import { DayPicker } from 'react-day-picker';
