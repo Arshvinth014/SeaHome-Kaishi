@@ -2,6 +2,8 @@ import React, { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { PageHeader } from '../components/seahome/OfficeRentals/PageHeader';
+import { OfficeSpecialFeatures } from '../components/seahome/OfficeRentals/OfficeSpecialFeatures';
+import { OfficeRentalDiscovery } from '../components/seahome/OfficeRentals/OfficeRentalDiscovery';
 import { MapPin, Building2, CircleDollarSign, Clock, LayoutGrid, TrendingUp, GraduationCap, ShoppingCart, Sparkles, type LucideIcon } from 'lucide-react';
 import SeahomeRentalRegionList from '../components/seahome/SeahomeRentalRegionList';
 import SeahomeJapanMap, { type JapanMapSelection } from '../components/seahome/SeahomeJapanMap';
@@ -148,6 +150,12 @@ const RentalOfficePage: React.FC = () => {
                         })}
                     </div>
                 </div>
+
+                {/* Office Special Features Component */}
+                <OfficeSpecialFeatures onNavigate={openListings} />
+
+                {/* Office Rental Discovery & Listings Component */}
+                <OfficeRentalDiscovery onNavigate={openListings} />
 
                 {citySearchModal ? (
                     <SeahomeRentalCitySearchModal
