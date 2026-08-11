@@ -14,6 +14,9 @@ import RentalLandPage from './pages/RentalLandPage';
 import ParkingPage from './pages/ParkingPage';
 import WarehousePage from './pages/WarehousePage';
 import RentalBuildingOtherPage from './pages/RentalBuildingOtherPage';
+import JapanHotelsPage from './pages/JapanHotelsPage';
+import JapanVillasPage from './pages/JapanVillasPage';
+import JapanRyokanOnsenPage from './pages/JapanRyokanOnsenPage';
 
 // SeaHome Net Public pages
 import { Navbar } from './layouts/Navbar';
@@ -25,6 +28,7 @@ import { BuyPage } from './pages/BuyPage';
 import { SLHomepage } from './pages/SLHomepage';
 import { JapanRentalPage } from './pages/JapanHomepage';
 import { ChatBotButton } from './components/ChatBotButton';
+
 
 function PublicLayout() {
   return (
@@ -79,6 +83,9 @@ function App() {
 
         <Route path="seahome-real-estates" element={<SeahomeLayout />}>
           <Route index element={<SeahomeRealEstates />} />
+          <Route path="JapanHotelsPage" element={<JapanHotelsPage />}/>
+          <Route path="JapanVillasPage" element={<JapanVillasPage />}/>
+          <Route path="JapanRyokanOnsenPage" element={<JapanRyokanOnsenPage />}/>
           <Route path="rental" element={<SeahomeRentalPage />} />
           <Route path="rental-shop" element={<RentalShopPage />} />
           <Route path="rental-office" element={<RentalOfficePage />} />

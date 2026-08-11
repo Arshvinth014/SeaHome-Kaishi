@@ -32,6 +32,8 @@ import SeahomeSearchAndTools from '../components/seahome/SeahomeSearchAndTools';
 import SeahomeNewsAndSocial from '../components/seahome/SeahomeNewsAndSocial';
 import SeahomeAdPlacement from '../components/seahome/SeahomeAdPlacements';
 
+
+
 function embedUrlWithKaishiFlag(base: string): string {
   const sep = base.includes('?') ? '&' : '?';
   return `${base}${sep}kaishi_embed=1`;
@@ -120,16 +122,16 @@ const SeahomeRealEstates: React.FC = () => {
     return () => window.removeEventListener(SEAHOME_NAVIGATE_EVENT, onNav);
   }, [openEmbed]);
 
-  const go = useCallback(
-    (path: string) => {
-      if (path.startsWith('/seahome-real-estates/')) {
-        navigate(path);
-        return;
-      }
-      openEmbed(path);
-    },
-    [navigate, openEmbed]
-  );
+const go = useCallback(
+  (path: string) => {
+    if (path.startsWith('/seahome-real-estates/')) {
+      navigate(path);
+      return;
+    }
+    openEmbed(path);
+  },
+  [navigate, openEmbed]
+);
 
   if (mode === 'embed') {
     return (
@@ -196,12 +198,12 @@ const SeahomeRealEstates: React.FC = () => {
     label: 'Hotels',
     sub: 'Business, city & resort stays',
     icon: iconWrap(<Hotel className="h-6 w-6" strokeWidth={1.75} />),
-    path: '/properties',
+    path: '/seahome-real-estates/JapanHotelsPage',
   };
 
   const bookingsGrid: HubCard[] = [
-    { label: 'Villas', sub: 'Private homes & resorts', icon: iconWrap(<Palmtree className="h-5 w-5" />), path: '/properties' },
-    { label: 'Ryokan & onsen', sub: 'Traditional inns', icon: iconWrap(<Tent className="h-5 w-5" />), path: '/properties' },
+    { label: 'Villas', sub: 'Private homes & resorts', icon: iconWrap(<Palmtree className="h-5 w-5" />), path: '/seahome-real-estates/JapanVillasPage' },
+    { label: 'Ryokan & onsen', sub: 'Traditional inns', icon: iconWrap(<Tent className="h-5 w-5" />), path: '/seahome-real-estates/JapanRyokanOnsenPage' },
     { label: 'Guesthouses', sub: 'Hostels & budget stays', icon: iconWrap(<Users className="h-5 w-5" />), path: '/properties' },
     { label: 'Minpaku', sub: 'Short-term rentals', icon: iconWrap(<Home className="h-5 w-5" />), path: '/properties' },
     { label: 'Monthly stays', sub: 'Serviced apartments', icon: iconWrap(<Building2 className="h-5 w-5" />), path: '/properties' },
