@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { ChevronLeft, ChevronRight, Search, Building2, Wrench, BookOpen, Layers } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Search, Building2, Wrench, BookOpen } from 'lucide-react';
 import {
     WHAT_S_NEW_BUILDING_LISTINGS,
     OTHER_PROPERTY_TYPES_BUILDING,
