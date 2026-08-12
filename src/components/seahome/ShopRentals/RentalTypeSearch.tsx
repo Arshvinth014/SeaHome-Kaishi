@@ -6,8 +6,39 @@ export const RentalTypeSearch: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<Record<string, boolean>>({});
   const [includeInquiryAllowed, setIncludeInquiryAllowed] = useState<boolean>(true);
 
+  // Helper item key arrays for category groups
+  const beautyKeys = businessCategories.beautyAndMedical.items.map((_, idx) => `beauty_item_${idx}`);
+  const heavyDiningKeys = businessCategories.heavyDining.items.map((_, idx) => `hd_item_${idx}`);
+  const retailKeys = businessCategories.retail.items.map((_, idx) => `retail_item_${idx}`);
+  const amusementKeys = businessCategories.amusement.items.map((_, idx) => `amuse_item_${idx}`);
+
+  // Single toggle for simple non-grouped items
   const handleToggle = (key: string) => {
     setSelectedOptions((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  // Toggle category header checkbox and sync all child item checkboxes
+  const handleCategoryToggle = (mainKey: string, itemKeys: string[]) => {
+    setSelectedOptions((prev) => {
+      const isCurrentlyChecked = !!prev[mainKey];
+      const nextState = !isCurrentlyChecked;
+      const updated = { ...prev, [mainKey]: nextState };
+      itemKeys.forEach((key) => {
+        updated[key] = nextState;
+      });
+      return updated;
+    });
+  };
+
+  // Toggle an individual child item checkbox and update main category state accordingly
+  const handleItemToggle = (itemKey: string, mainKey: string, itemKeys: string[]) => {
+    setSelectedOptions((prev) => {
+      const nextItemState = !prev[itemKey];
+      const updated = { ...prev, [itemKey]: nextItemState };
+      const allChecked = itemKeys.every((k) => (k === itemKey ? nextItemState : !!prev[k]));
+      updated[mainKey] = allChecked;
+      return updated;
+    });
   };
 
   return (
@@ -55,7 +86,7 @@ export const RentalTypeSearch: React.FC = () => {
               type="checkbox"
               id="cat_beauty"
               checked={!!selectedOptions["beauty_main"]}
-              onChange={() => handleToggle("beauty_main")}
+              onChange={() => handleCategoryToggle("beauty_main", beautyKeys)}
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer"
             />
             <label
@@ -73,7 +104,7 @@ export const RentalTypeSearch: React.FC = () => {
                   <input
                     type="checkbox"
                     checked={!!selectedOptions[itemKey]}
-                    onChange={() => handleToggle(itemKey)}
+                    onChange={() => handleItemToggle(itemKey, "beauty_main", beautyKeys)}
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-0.5 shrink-0 cursor-pointer"
                   />
                   <span className="text-xs sm:text-sm text-gray-700 group-hover:text-blue-600 transition-colors leading-tight">
@@ -92,7 +123,7 @@ export const RentalTypeSearch: React.FC = () => {
               type="checkbox"
               id="cat_heavy_dining"
               checked={!!selectedOptions["heavy_dining_main"]}
-              onChange={() => handleToggle("heavy_dining_main")}
+              onChange={() => handleCategoryToggle("heavy_dining_main", heavyDiningKeys)}
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer"
             />
             <label
@@ -110,7 +141,7 @@ export const RentalTypeSearch: React.FC = () => {
                   <input
                     type="checkbox"
                     checked={!!selectedOptions[itemKey]}
-                    onChange={() => handleToggle(itemKey)}
+                    onChange={() => handleItemToggle(itemKey, "heavy_dining_main", heavyDiningKeys)}
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-0.5 shrink-0 cursor-pointer"
                   />
                   <span className="text-xs sm:text-sm text-gray-700 group-hover:text-blue-600 transition-colors leading-tight">
@@ -153,7 +184,7 @@ export const RentalTypeSearch: React.FC = () => {
               type="checkbox"
               id="cat_retail"
               checked={!!selectedOptions["retail_main"]}
-              onChange={() => handleToggle("retail_main")}
+              onChange={() => handleCategoryToggle("retail_main", retailKeys)}
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer"
             />
             <label
@@ -171,7 +202,7 @@ export const RentalTypeSearch: React.FC = () => {
                   <input
                     type="checkbox"
                     checked={!!selectedOptions[itemKey]}
-                    onChange={() => handleToggle(itemKey)}
+                    onChange={() => handleItemToggle(itemKey, "retail_main", retailKeys)}
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-0.5 shrink-0 cursor-pointer"
                   />
                   <span className="text-xs sm:text-sm text-gray-700 group-hover:text-blue-600 transition-colors leading-tight">
@@ -190,7 +221,7 @@ export const RentalTypeSearch: React.FC = () => {
               type="checkbox"
               id="cat_amusement"
               checked={!!selectedOptions["amusement_main"]}
-              onChange={() => handleToggle("amusement_main")}
+              onChange={() => handleCategoryToggle("amusement_main", amusementKeys)}
               className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer"
             />
             <label
@@ -208,7 +239,7 @@ export const RentalTypeSearch: React.FC = () => {
                   <input
                     type="checkbox"
                     checked={!!selectedOptions[itemKey]}
-                    onChange={() => handleToggle(itemKey)}
+                    onChange={() => handleItemToggle(itemKey, "amusement_main", amusementKeys)}
                     className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-0.5 shrink-0 cursor-pointer"
                   />
                   <span className="text-xs sm:text-sm text-gray-700 group-hover:text-blue-600 transition-colors leading-tight">
