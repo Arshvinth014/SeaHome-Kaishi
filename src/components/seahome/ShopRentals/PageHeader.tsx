@@ -16,7 +16,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({ totalListings = "72,710"
             Real Estate & Housing Top
           </a>
           <ChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-          <a href="#" className="text-blue-600 hover:underline transition-colors font-normal">
+          <a href="/seahome-real-estates" className="text-blue-600 hover:underline transition-colors font-normal">
             Rental
           </a>
           <ChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
@@ -36,7 +36,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({ totalListings = "72,710"
 
       {/* 2. Main Header Card with Blue Top Border */}
       <div className="bg-white p-6 md:p-8 border-t-[3px] border-t-blue-600 rounded-b-lg shadow-sm border-x border-b border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-6">
-        
+
         {/* Title Section */}
         <div className="max-w-3xl">
           <h1 className="text-xl sm:text-2xl md:text-[26px] font-extrabold text-gray-900 leading-snug tracking-tight">
