@@ -41,8 +41,12 @@ export const RentalTypeSearch: React.FC = () => {
     });
   };
 
+  // Count total selected items
+  const selectedCount = Object.values(selectedOptions).filter(Boolean).length;
+  const hasAnySelection = selectedCount > 0;
+
   return (
-    <div className="w-full bg-white border border-gray-200 rounded-lg shadow-sm mb-8 overflow-hidden">
+    <div className="w-full bg-white border border-gray-200 rounded-lg shadow-sm mb-8 overflow-hidden relative">
       {/* 1. Header Banner */}
       <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50/30 p-4 sm:p-5 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex items-center space-x-3">
@@ -296,6 +300,33 @@ export const RentalTypeSearch: React.FC = () => {
           <span>Select a prefecture</span>
         </button>
       </div>
+
+      {/* Floating Bottom Sticky Ribbon when items are selected */}
+      {hasAnySelection && (
+        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl bg-slate-900/95 text-white backdrop-blur-xl border border-slate-700/80 rounded-2xl shadow-[0_20px_60px_-15px_rgba(15,23,42,0.6)] p-3.5 sm:p-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-3.5 sm:gap-4 transition-all duration-300 animate-in fade-in slide-in-from-bottom-5">
+          <div className="flex items-center space-x-3.5 w-full md:w-auto">
+            <span className="flex h-7 px-3 items-center justify-center rounded-full bg-blue-500/20 text-blue-400 border border-blue-400/30 text-xs font-bold shrink-0">
+              {selectedCount} selected
+            </span>
+            <label className="flex items-center space-x-2.5 cursor-pointer group text-xs sm:text-sm text-slate-300 hover:text-white transition-colors">
+              <input
+                type="checkbox"
+                checked={includeInquiryAllowed}
+                onChange={(e) => setIncludeInquiryAllowed(e.target.checked)}
+                className="w-4 h-4 text-blue-500 border-slate-600 rounded focus:ring-blue-500 cursor-pointer shrink-0"
+              />
+              <span className="leading-tight">
+                Include properties where the type of business allowed requires inquiry in the search results.
+              </span>
+            </label>
+          </div>
+
+          <button className="w-full md:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center space-x-2 shrink-0 group">
+            <MapPin className="w-4 h-4 group-hover:scale-110 transition-transform" />
+            <span>Select a prefecture</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 };
