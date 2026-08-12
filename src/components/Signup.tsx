@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, Settings, Globe, ArrowRight, Sparkles, ShieldCheck, Mail, Loader2, KeyRound, Phone } from 'lucide-react';
+import { X, Settings, Globe, ArrowRight, ShieldCheck, Mail, Loader2, KeyRound, Phone } from 'lucide-react';
 
 /**
  * Props for the Signup modal component.
@@ -108,8 +108,8 @@ export default function Signup({ open, onClose, isNewUser = true }: SignupProps)
           </button>
 
           <div className="mb-5 mt-2 flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-600/20">
-              <Sparkles size={18} />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-blue-100/80 bg-gradient-to-br from-blue-50 to-cyan-50/60 p-1.5 shadow-sm shadow-blue-500/10">
+              <img src="/BlueBirdBuyPage.png" alt="SeaHome Bird" className="h-full w-full object-contain drop-shadow-sm" />
             </div>
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-600">SeaHome Net</p>
