@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { Store, MapPin, Sparkles } from 'lucide-react';
 import { businessCategories } from '../../../config/rentalShop';
 
-export const RentalTypeSearch: React.FC = () => {
+interface RentalTypeSearchProps {
+  onOpenPrefectureModal?: () => void;
+}
+
+export const RentalTypeSearch: React.FC<RentalTypeSearchProps> = ({ onOpenPrefectureModal }) => {
   const [selectedOptions, setSelectedOptions] = useState<Record<string, boolean>>({});
   const [includeInquiryAllowed, setIncludeInquiryAllowed] = useState<boolean>(true);
 
@@ -295,7 +299,10 @@ export const RentalTypeSearch: React.FC = () => {
           </span>
         </label>
 
-        <button className="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold rounded-lg shadow-md transition-all flex items-center justify-center space-x-2.5 shrink-0">
+        <button
+          onClick={onOpenPrefectureModal}
+          className="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold rounded-lg shadow-md transition-all flex items-center justify-center space-x-2.5 shrink-0 cursor-pointer"
+        >
           <MapPin className="w-5 h-5" />
           <span>Select a prefecture</span>
         </button>
@@ -321,7 +328,10 @@ export const RentalTypeSearch: React.FC = () => {
             </label>
           </div>
 
-          <button className="w-full md:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center space-x-2 shrink-0 group">
+          <button
+            onClick={onOpenPrefectureModal}
+            className="w-full md:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center space-x-2 shrink-0 group cursor-pointer"
+          >
             <MapPin className="w-4 h-4 group-hover:scale-110 transition-transform" />
             <span>Select a prefecture</span>
           </button>

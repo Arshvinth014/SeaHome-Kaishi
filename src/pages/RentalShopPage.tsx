@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SectionHeader } from '../components/seahome/ShopRentals/RentalShopSectionHeader';
 import { RentalShopConditionSearch } from '../components/seahome/ShopRentals/RentalShopConditionSearch';
 import { RentalShopBottom } from '../components/seahome/ShopRentals/RentalShopBottom';
@@ -6,8 +6,11 @@ import { UsefulGuides } from '../components/seahome/ShopRentals/RentalShopUseful
 import { PageHeader } from '../components/seahome/ShopRentals/PageHeader';
 import { RentalTypeSearch } from '../components/seahome/ShopRentals/RentalTypeSearch';
 import { RentalShopProperties } from '../components/seahome/ShopRentals/RentalShopProperties';
+import { PrefectureMapModal } from '../components/seahome/ShopRentals/PrefectureMapModal';
 
 const RentalShopPage: React.FC = () => {
+  const [isPrefectureModalOpen, setIsPrefectureModalOpen] = useState(false);
+
   return (
     <div className="bg-gray-50/40 min-h-screen py-6">
       {/* Main Container - Spans full width without ads */}
@@ -16,7 +19,7 @@ const RentalShopPage: React.FC = () => {
         <PageHeader totalListings="72,710" />
 
         {/* Business Type Search Component */}
-        <RentalTypeSearch />
+        <RentalTypeSearch onOpenPrefectureModal={() => setIsPrefectureModalOpen(true)} />
 
         {/* Section: Condition Search */}
         <RentalShopConditionSearch />
@@ -25,10 +28,17 @@ const RentalShopPage: React.FC = () => {
         <RentalShopProperties />
 
         {/* Section: Useful Guides */}
-        <SectionHeader title="Use   ful tips for finding a store" />
+        <SectionHeader title="Useful tips for finding a store" />
         <UsefulGuides />
+
         {/* Bottom Section: Property Types, Terms & Sea Home Info */}
         <RentalShopBottom />
+
+        {/* Prefecture Selection Interactive Map Modal */}
+        <PrefectureMapModal
+          isOpen={isPrefectureModalOpen}
+          onClose={() => setIsPrefectureModalOpen(false)}
+        />
       </main>
     </div>
   );
