@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Store, MapPin, Network, Map, SlidersHorizontal, ArrowRight, Building2 } from 'lucide-react';
+import { Store, MapPin, Network, Map, SlidersHorizontal, ArrowRight } from 'lucide-react';
 import { businessCategories } from '../../../config/rentalShop';
 import { slugifyCategoryItem } from '../../../config/rentalShopCategories';
 

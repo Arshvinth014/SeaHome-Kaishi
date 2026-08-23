@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Building2, MapPin, Network, Map, SlidersHorizontal, ArrowRight, LayoutGrid, Users, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
+import { Building2, MapPin, Network, Map, SlidersHorizontal, ArrowRight, LayoutGrid, Users, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 interface OfficeTypeSearchProps {
   onOpenPrefectureModal?: () => void;
@@ -142,11 +142,10 @@ export const OfficeTypeSearch: React.FC<OfficeTypeSearchProps> = ({ onOpenPrefec
                     handleMapSearchClick();
                   }
                 }}
-                className={`flex flex-col items-center justify-center p-2.5 sm:p-3 rounded-xl border text-center transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? 'border-sky-500 bg-white text-sky-900 shadow-md shadow-sky-900/10 font-bold ring-2 ring-sky-500/20'
-                    : 'border-sky-100 bg-white/70 text-slate-700 hover:border-sky-300 hover:bg-white hover:text-sky-900'
-                }`}
+                className={`flex flex-col items-center justify-center p-2.5 sm:p-3 rounded-xl border text-center transition-all duration-200 cursor-pointer ${isActive
+                  ? 'border-sky-500 bg-white text-sky-900 shadow-md shadow-sky-900/10 font-bold ring-2 ring-sky-500/20'
+                  : 'border-sky-100 bg-white/70 text-slate-700 hover:border-sky-300 hover:bg-white hover:text-sky-900'
+                  }`}
               >
                 <div className="flex items-center gap-1.5">
                   <Icon className={`w-4 h-4 ${isActive ? 'text-sky-600' : 'text-sky-500'}`} />
