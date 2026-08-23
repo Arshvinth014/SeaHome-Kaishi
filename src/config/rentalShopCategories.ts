@@ -28,25 +28,25 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
   'clinic-medical': {
     slug: 'clinic-medical',
     title: 'Hospitals, Clinics & Dental Offices',
-    japaneseTitle: '病院・クリニック・歯科向け賃貸店舗',
+    japaneseTitle: 'Medical & Healthcare Facilities',
     groupTitle: 'Beauty, medical care, and nursing care',
     description: 'Find commercial spaces and medical building units approved for clinics, dental practices, internal medicine, orthopedics, and healthcare facilities. Search ground floor units with barrier-free access, water supply, and ample patient parking.',
     totalCount: 1420,
     criteriaTags: [
-      '1st Floor (1階店舗)',
-      'Barrier-free access (バリアフリー)',
-      'Water drainage installed (水周りあり)',
-      'Turnkey Medical Setup (医療居抜き)',
-      'Near Station / 3-min walk (駅徒歩3分以内)',
-      'Patient Parking Included (駐車場あり)',
-      'Elevator (エレベーター完備)'
+      '1st Floor Storefront',
+      'Barrier-Free Access',
+      'Plumbing & Drainage Ready',
+      'Turnkey Medical Setup',
+      'Near Station / 3-min Walk',
+      'Patient Parking Included',
+      'Elevator Building'
     ],
     sampleListings: [
       {
         id: 101,
         title: 'Shinjuku Medical Building 1st Floor Unit',
-        rent: '420,000 yen/month',
-        managementFee: '35,000 yen',
+        rent: '$2,800/month',
+        managementFee: '$230',
         deposit: 'Deposit 6 mo / Key 1 mo',
         area: '82.50 m² (24.95 tsubo)',
         location: 'Nishi-Shinjuku, Shinjuku-ku, Tokyo',
@@ -58,8 +58,8 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
       {
         id: 102,
         title: 'Niigata Station Front Dental & Medical Space',
-        rent: '280,000 yen/month',
-        managementFee: '20,000 yen',
+        rent: '$1,900/month',
+        managementFee: '$140',
         deposit: 'Deposit 4 mo / Key 0 mo',
         area: '65.40 m² (19.78 tsubo)',
         location: 'Chuo-ku, Niigata City',
@@ -71,8 +71,8 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
       {
         id: 103,
         title: 'Umeda Health Care Center Roadside Facility',
-        rent: '510,000 yen/month',
-        managementFee: '40,000 yen',
+        rent: '$3,400/month',
+        managementFee: '$270',
         deposit: 'Deposit 6 mo / Key 1 mo',
         area: '110.20 m² (33.33 tsubo)',
         location: 'Kita-ku, Osaka City',
@@ -84,8 +84,8 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
       {
         id: 104,
         title: 'Shibuya Orthopedic & Physical Therapy Unit',
-        rent: '380,000 yen/month',
-        managementFee: '25,000 yen',
+        rent: '$2,500/month',
+        managementFee: '$170',
         deposit: 'Deposit 5 mo / Key 1 mo',
         area: '74.10 m² (22.41 tsubo)',
         location: 'Jinnan, Shibuya-ku, Tokyo',
@@ -112,7 +112,7 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
       },
       {
         q: 'What is the average initial cost for a turnkey medical unit?',
-        a: 'Turnkey medical properties (居抜き店舗) save significantly on interior construction, with initial security deposits around 4-6 months rent.',
+        a: 'Turnkey medical properties save significantly on interior construction, with initial security deposits around 4-6 months rent.',
       },
     ],
     relatedSlugs: ['hair-salon', 'beauty-salon', 'massage-clinic', 'nursing-care'],
@@ -121,24 +121,24 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
   'hair-salon': {
     slug: 'hair-salon',
     title: 'Hair Salons & Barbershops',
-    japaneseTitle: '美容室・理容室向け賃貸店舗',
+    japaneseTitle: 'Hair & Beauty Salons',
     groupTitle: 'Beauty, medical care, and nursing care',
     description: 'Browse storefronts and upper-floor spaces suitable for hair salons, barber shops, hair coloring spots, and head spas. Search spaces equipped with shampoo station plumbing, high-power water heaters, and natural lighting.',
     totalCount: 1890,
     criteriaTags: [
-      'Shampoo Plumbing Ready (シャンプー台配管あり)',
-      'High-capacity Water Heater (給湯設備強化)',
-      '1st Floor Storefront (路面店 / 1階店舗)',
-      'Turnkey Hair Salon (美容室居抜き)',
-      'Natural Sunlight (日当たり良好)',
-      'Station 5-min walk (駅近)'
+      'Shampoo Plumbing Ready',
+      'High-Capacity Water Heater',
+      '1st Floor Storefront',
+      'Turnkey Hair Salon',
+      'Natural Sunlight',
+      'Station 5-min Walk'
     ],
     sampleListings: [
       {
         id: 201,
         title: 'Harajuku Designer Hair Salon Space',
-        rent: '360,000 yen/month',
-        managementFee: '28,000 yen',
+        rent: '$2,400/month',
+        managementFee: '$190',
         deposit: 'Deposit 4 mo / Key 1 mo',
         area: '58.20 m² (17.60 tsubo)',
         location: 'Jingumae, Shibuya-ku, Tokyo',
@@ -150,8 +150,8 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
       {
         id: 202,
         title: 'Yokohama Station West Exit Barber & Spa Unit',
-        rent: '290,000 yen/month',
-        managementFee: '22,000 yen',
+        rent: '$1,950/month',
+        managementFee: '$150',
         deposit: 'Deposit 3 mo / Key 1 mo',
         area: '48.90 m² (14.79 tsubo)',
         location: 'Nishi-ku, Yokohama City',
@@ -179,24 +179,24 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
   'ramen-chinese': {
     slug: 'ramen-chinese',
     title: 'Ramen & Chinese Restaurants',
-    japaneseTitle: 'ラーメン屋・中華料理店向け賃貸店舗',
+    japaneseTitle: 'Noodle & Chinese Restaurants',
     groupTitle: 'Heavy eating and drinking',
-    description: 'Find commercial spaces equipped for heavy cooking (重飲食), ramen shops, Chinese diners, and noodle bars. Search properties with heavy gas supply, commercial duct exhaust systems, and grease traps.',
+    description: 'Find commercial spaces equipped for heavy cooking, ramen shops, Chinese diners, and noodle bars. Search properties with heavy gas supply, commercial duct exhaust systems, and grease traps.',
     totalCount: 1650,
     criteriaTags: [
-      'Heavy Cooking Allowed (重飲食可)',
-      'High Gas Volume Line (都市ガス大容量)',
-      'Exhaust Duct System (排気ダクト施工済)',
-      'Grease Trap (グリストラップ完備)',
-      'Turnkey Restaurant (飲食居抜き)',
-      '1st Floor Counter Shop (カウンター店舗)'
+      'Heavy Cooking Allowed',
+      'High Gas Volume Line',
+      'Exhaust Duct System Installed',
+      'Grease Trap Included',
+      'Turnkey Restaurant',
+      '1st Floor Counter Shop'
     ],
     sampleListings: [
       {
         id: 301,
         title: 'Ikebukuro Station East Exit Ramen Counter Shop',
-        rent: '480,000 yen/month',
-        managementFee: '32,000 yen',
+        rent: '$3,200/month',
+        managementFee: '$220',
         deposit: 'Deposit 6 mo / Key 1 mo',
         area: '42.10 m² (12.73 tsubo)',
         location: 'Higashi-Ikebukuro, Toshima-ku, Tokyo',
@@ -208,8 +208,8 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
       {
         id: 302,
         title: 'Namba Dotonbori Chinese Diner & Noodle Bar',
-        rent: '550,000 yen/month',
-        managementFee: '40,000 yen',
+        rent: '$3,700/month',
+        managementFee: '$270',
         deposit: 'Deposit 8 mo / Key 1 mo',
         area: '76.80 m² (23.23 tsubo)',
         location: 'Chuo-ku, Osaka City',
@@ -227,7 +227,7 @@ export const RENTAL_SHOP_CATEGORIES: Record<string, ShopCategoryDetail> = {
     ],
     faqs: [
       {
-        q: 'What does "Heavy Cooking Allowed" (重飲食可) mean?',
+        q: 'What does "Heavy Cooking Allowed" mean?',
         a: 'It means the landlord permits intense frying, high heat boilers, and heavy grease cooking (unlike light cafes which only permit heating pre-made food).',
       },
     ],

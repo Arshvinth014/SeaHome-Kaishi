@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight, Building2, Store, Home } from 'lucide-react';
 
 interface PageHeaderProps {
@@ -9,31 +10,30 @@ interface PageHeaderProps {
 }
 
 export const PageHeader: React.FC<PageHeaderProps> = ({
-  totalListings = "72,710",
+  totalListings = "77,775",
   titlePrefix = "Search for",
-  titleHighlight = "rental property information for offices, vacant offices, and commercial spaces.",
+  titleHighlight = "rental office space, vacant offices, and commercial building properties.",
   breadcrumbCurrent = "Office for Rent",
 }) => {
   return (
-    <div className="w-full mb-8">
+    <div className="w-full mb-6">
       {/* 1. Top Breadcrumb & Decorative Skyline */}
-      <div className="flex justify-between items-end pb-2 px-1 relative">
+      <div className="flex justify-between items-end pb-2.5 px-1 relative">
         {/* Breadcrumb Links */}
-        <nav className="flex items-center space-x-1.5 text-xs md:text-sm text-gray-600 z-10">
-          <a href="#" className="text-blue-600 hover:underline transition-colors font-normal">
-            Search for office space and rental
-          </a>
-          
-          <ChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-          <a href="/seahome-real-estates" className="text-blue-600 hover:underline transition-colors font-normal">
+        <nav className="flex items-center space-x-1.5 text-xs md:text-sm text-slate-500 z-10 font-medium">
+          <Link to="/" className="text-sky-700 hover:underline transition-colors font-semibold">
+            Real Estate & Housing Top
+          </Link>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+          <Link to="/seahome-real-estates/rental" className="text-sky-700 hover:underline transition-colors font-semibold">
             Rental
-          </a>
-          <ChevronRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-          <span className="text-gray-800 font-medium">{breadcrumbCurrent}</span>
+          </Link>
+          <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+          <span className="text-sky-950 font-extrabold">{breadcrumbCurrent}</span>
         </nav>
 
-        {/* Subtle Decorative Building Watermark */}
-        <div className="hidden md:flex items-end space-x-1.5 text-blue-200/50 select-none pointer-events-none pr-2">
+        {/* Decorative Skyline Icons */}
+        <div className="hidden md:flex items-end space-x-1.5 text-sky-200/60 select-none pointer-events-none pr-2">
           <Home className="w-4 h-4" />
           <Building2 className="w-6 h-6" />
           <Store className="w-5 h-5" />
@@ -43,35 +43,33 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         </div>
       </div>
 
-      {/* 2. Main Header Card with Blue Top Border */}
-      <div className="bg-white p-6 md:p-8 border-t-[3px] border-t-blue-600 rounded-b-lg shadow-sm border-x border-b border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      {/* 2. Main Header Card with Ocean Blue Border */}
+      <div className="bg-white p-6 md:p-8 border-t-4 border-t-sky-600 rounded-2xl shadow-md border-x border-b border-sky-100 flex flex-col md:flex-row md:items-center justify-between gap-6">
         
         {/* Title Section */}
         <div className="max-w-3xl">
-          <h1 className="text-xl sm:text-2xl md:text-[26px] font-extrabold text-gray-900 leading-snug tracking-tight">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-extrabold mb-3">
+            <Building2 className="w-4 h-4 text-sky-600" />
+            <span>SeaHome Net Commercial Real Estate</span>
+          </div>
+          <h1 className="text-xl sm:text-2xl md:text-[26px] font-black text-slate-900 leading-snug tracking-tight">
             {titlePrefix}{" "}
-            <span className="text-blue-600">
+            <span className="bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent font-extrabold">
               {titleHighlight}
             </span>
           </h1>
         </div>
 
         {/* Listings Counter Badge Box */}
-        <div className="flex items-center justify-between md:justify-end space-x-3 bg-gray-50 md:bg-transparent p-3.5 md:p-0 rounded-xl border border-gray-100 md:border-0 shrink-0">
-          <span className="text-xs sm:text-sm text-gray-600 font-medium whitespace-nowrap">
-            Number of listings today
-          </span>
-          <div className="bg-gray-100/80 border border-gray-200/60 rounded-full px-5 py-2 flex items-center space-x-1.5 shadow-inner">
-            <span className="text-xl sm:text-2xl font-black text-blue-600 tracking-tight">
-              {totalListings}
-            </span>
-            <span className="text-xs sm:text-sm font-bold text-gray-700">
-              items
-            </span>
+        <div className="bg-sky-50 border border-sky-200/80 rounded-2xl p-4 flex items-center gap-3 shrink-0 self-start md:self-auto shadow-xs">
+          <span className="text-xs text-sky-900 font-extrabold whitespace-nowrap">Available Office Listings</span>
+          <div className="bg-white px-4 py-1.5 rounded-xl border border-sky-200 shadow-xs flex items-baseline gap-1">
+            <span className="text-2xl font-black text-sky-600">{totalListings}</span>
+            <span className="text-xs font-bold text-slate-600">units</span>
           </div>
         </div>
 
       </div>
     </div>
   );
-};
+};

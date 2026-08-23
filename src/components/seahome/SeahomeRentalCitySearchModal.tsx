@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   ChevronRight,
   Map,
@@ -24,7 +25,7 @@ const SEARCH_OPTIONS: {
   icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 }[] = [
   { id: 'station', label: 'Search by line & station', icon: TrainFront },
-  { id: 'area', label: 'Search by area', icon: MapPinned },
+  { id: 'area', label: 'Search by area / city', icon: MapPinned },
   { id: 'map', label: 'Search on map', icon: Map },
   { id: 'route', label: 'Search by route diagram', icon: Network },
 ];
@@ -58,7 +59,12 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
   onSearch,
   onViewPrefecture,
 }) => {
-  const { prefectureName, city } = context;
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { prefectureName, prefectureSlug, city } = context;
+
+  const isOfficeMode = location.pathname.includes('/rental-office');
+  const basePath = isOfficeMode ? '/seahome-real-estates/rental-office' : '/seahome-real-estates/rental-shop';
 
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -72,6 +78,27 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
       window.removeEventListener('keydown', onKey);
     };
   }, [onClose]);
+
+  const handleOptionClick = (id: CitySearchMethod) => {
+    onClose();
+    if (id === 'area') {
+      const cityPath = city
+        ? `${basePath}/${prefectureSlug || 'iwate'}/city/${city.slug}`
+        : `${basePath}/${prefectureSlug || 'iwate'}/city`;
+      navigate(cityPath);
+    } else if (id === 'station' || id === 'route') {
+      navigate(`/seahome-real-estates/rental/search-by-line-station/${prefectureSlug || 'niigata'}`);
+    } else if (id === 'map') {
+      navigate(`/seahome-real-estates/rental/search-by-map/${prefectureSlug || 'niigata'}`);
+    } else {
+      onSearch(id);
+    }
+  };
+
+  const handleViewAllPrefecture = () => {
+    onClose();
+    navigate(`${basePath}/${prefectureSlug || 'iwate'}/city`);
+  };
 
   if (typeof document === 'undefined') return null;
 
@@ -135,7 +162,7 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
               <button
                 key={id}
                 type="button"
-                onClick={() => onSearch(id)}
+                onClick={() => handleOptionClick(id)}
                 className="group flex min-h-[4.25rem] items-center gap-3 rounded-xl border-2 bg-white px-3 py-3 text-left transition hover:bg-sky-50/60 hover:border-sky-500 sm:min-h-[4.75rem] sm:px-4 cursor-pointer"
                 style={{ borderColor: `${SKY_BLUE}33` }}
               >
@@ -159,7 +186,7 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
 
           <button
             type="button"
-            onClick={onViewPrefecture}
+            onClick={handleViewAllPrefecture}
             className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-sky-700 underline decoration-sky-400/80 underline-offset-2 transition hover:text-sky-900 cursor-pointer"
           >
             <span className="text-[10px]" style={{ color: SKY_BLUE }} aria-hidden>

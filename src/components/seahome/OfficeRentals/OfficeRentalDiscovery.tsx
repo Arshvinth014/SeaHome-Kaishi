@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Search } from 'lucide-react';
 import {
     WHAT_S_NEW_LISTINGS,
@@ -18,13 +19,14 @@ interface OfficeRentalDiscoveryProps {
 }
 
 export const OfficeRentalDiscovery: React.FC<OfficeRentalDiscoveryProps> = ({ onNavigate }) => {
+    const navigate = useNavigate();
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     const handleLinkClick = (path: string) => {
         if (onNavigate) {
             onNavigate(path);
         } else {
-            window.location.href = path;
+            navigate(path);
         }
     };
 

@@ -98,11 +98,11 @@ export const RentalTypeSearch: React.FC<RentalTypeSearchProps> = ({ onOpenPrefec
       <div className="border-b border-sky-100 bg-sky-50/60 p-2 sm:p-3">
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
           {[
-            { id: 'business', label: 'By Business Type', sub: '業種から', icon: Store },
-            { id: 'area', label: 'By Area / City', sub: '地域から', icon: MapPin },
-            { id: 'station', label: 'By Line / Station', sub: '沿線・駅から', icon: Network },
-            { id: 'map', label: 'By Map Search', sub: '地図から', icon: Map },
-            { id: 'condition', label: 'By Special Criteria', sub: 'こだわり条件', icon: SlidersHorizontal },
+            { id: 'business', label: 'By Business Type', sub: 'By Sector', icon: Store },
+            { id: 'area', label: 'By Area / City', sub: 'By Region', icon: MapPin },
+            { id: 'station', label: 'By Line / Station', sub: 'By Line & Station', icon: Network },
+            { id: 'map', label: 'By Map Search', sub: 'Map Location', icon: Map },
+            { id: 'condition', label: 'By Special Criteria', sub: 'By Condition', icon: SlidersHorizontal },
           ].map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;

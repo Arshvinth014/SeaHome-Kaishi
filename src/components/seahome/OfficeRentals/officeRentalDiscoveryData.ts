@@ -142,11 +142,12 @@ export const RENTAL_OFFICE_TERMS: NamedLink[] = [
 ];
 
 export const AFFILIATED_STORE_BANNER = {
-    title: 'Find an At Home affiliated store',
+    title: 'Find a SeaHome Net partner agent',
     description: 'Find your perfect property quickly! Directly entrust your property search to the real estate company that\'s right for you!',
     imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80',
     link: '/agents/affiliated-stores',
 };
 
 export const FOOTER_DISCLAIMER_TEXT =
-    'For all your office and rental property needs, trust At Home. At Home, our real estate information website, makes it easy to find the perfect office or rental property to suit your needs.';
+    'For all your office and rental property needs, trust SeaHome Net. SeaHome Net, our real estate information website, makes it easy to find the perfect office or rental property to suit your needs.';
+
