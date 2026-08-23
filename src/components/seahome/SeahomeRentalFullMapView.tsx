@@ -7,7 +7,7 @@ import type { PropertyTransportAccess } from './seahomeRentalPropertyDetailData'
 import type { SurroundingsPoi, SurroundingsPoiCategory } from './seahomeRentalSurroundingsMapData';
 import type { NearStationMarker } from './seahomeRentalSurroundingsMapStations';
 
-const CRIMSON = '#b3002d';
+const OCEAN_BLUE = '#0284c7';
 
 type Props = {
   title: string;
@@ -57,8 +57,8 @@ const SeahomeRentalFullMapView: React.FC<Props> = ({
     <div className={compact ? '' : 'flex min-h-[calc(100vh-4rem)] flex-col bg-white'}>
       {!compact ? (
         <header
-          className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 px-4 py-3"
-          style={{ borderTopColor: CRIMSON, borderTopWidth: 3 }}
+          className="flex flex-wrap items-center justify-between gap-3 border-b border-sky-200 px-4 py-3 bg-gradient-to-r from-sky-50 to-white"
+          style={{ borderTopColor: OCEAN_BLUE, borderTopWidth: 3 }}
         >
           {returnPath ? (
             <Link
