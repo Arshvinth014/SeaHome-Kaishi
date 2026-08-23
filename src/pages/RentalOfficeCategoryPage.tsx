@@ -5,16 +5,12 @@ import {
   Building2,
   MapPin,
   Sparkles,
-  Search,
   ArrowLeft,
   CheckCircle2,
   HelpCircle,
   Mail,
   SlidersHorizontal,
   LayoutGrid,
-  Users,
-  ShieldCheck,
-  Zap,
 } from 'lucide-react';
 import { HUB_CONTAINER } from '../components/seahome/seahomeHubLayout';
 import { PrefectureMapModal } from '../components/seahome/ShopRentals/PrefectureMapModal';
@@ -41,9 +37,10 @@ export type OfficeCategoryMeta = {
     stationAccess: string;
     floor: string;
     badge: string;
+    approvedTag?: string;
     imageUrl: string;
   }[];
-  layoutGuide: { title: string; desc: string }[];
+  layoutGuide: { title: string; text: string }[];
   faqs: { q: string; a: string }[];
 };
 
@@ -340,11 +337,10 @@ export const RentalOfficeCategoryPage: React.FC = () => {
                   key={feature}
                   type="button"
                   onClick={() => setSelectedFeature(isSelected ? null : feature)}
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                    isSelected
-                      ? 'bg-sky-600 text-white shadow-md shadow-sky-600/20 border border-sky-500'
-                      : 'bg-slate-50 text-slate-700 border border-slate-200 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-900'
-                  }`}
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${isSelected
+                    ? 'bg-sky-600 text-white shadow-md shadow-sky-600/20 border border-sky-500'
+                    : 'bg-slate-50 text-slate-700 border border-slate-200 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-900'
+                    }`}
                 >
                   <CheckCircle2 className={`w-3.5 h-3.5 ${isSelected ? 'text-white' : 'text-sky-500'}`} />
                   <span>{feature}</span>

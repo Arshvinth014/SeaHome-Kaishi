@@ -5,18 +5,12 @@ import {
   Building2,
   Store,
   MapPin,
-  Sparkles,
   Search,
   ArrowLeft,
-  CheckCircle2,
-  HelpCircle,
   Mail,
-  SlidersHorizontal,
-  LayoutGrid,
   Network,
   Map,
   TrendingUp,
-  Filter,
   CheckSquare,
 } from 'lucide-react';
 import { HUB_CONTAINER } from '../components/seahome/seahomeHubLayout';
@@ -39,7 +33,6 @@ export const PrefectureCityPage: React.FC = () => {
   }, [prefectureSlug]);
 
   const [selectedCitySlugs, setSelectedCitySlugs] = useState<string[]>([]);
-  const [keywordQuery, setKeywordQuery] = useState('');
 
   const toggleCitySlug = (slug: string) => {
     setSelectedCitySlugs((prev) =>
@@ -181,17 +174,16 @@ export const PrefectureCityPage: React.FC = () => {
                 <div
                   key={city.slug}
                   onClick={() => toggleCitySlug(city.slug)}
-                  className={`p-3 rounded-xl border transition-all cursor-pointer flex items-center justify-between group ${
-                    isChecked
+                  className={`p-3 rounded-xl border transition-all cursor-pointer flex items-center justify-between group ${isChecked
                       ? 'border-sky-500 bg-sky-50/80 text-sky-950 font-bold shadow-xs ring-1 ring-sky-400'
                       : 'border-slate-200 bg-white hover:border-sky-300 hover:bg-slate-50'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center space-x-2.5 min-w-0 pr-2">
                     <input
                       type="checkbox"
                       checked={isChecked}
-                      onChange={() => {}}
+                      onChange={() => { }}
                       className="w-4 h-4 text-sky-600 border-slate-300 rounded focus:ring-sky-500 shrink-0 cursor-pointer"
                     />
                     <span className="text-xs sm:text-sm font-semibold truncate group-hover:text-sky-700">
@@ -199,13 +191,12 @@ export const PrefectureCityPage: React.FC = () => {
                     </span>
                   </div>
                   <span
-                    className={`px-2 py-0.5 rounded-full text-[11px] font-bold shrink-0 ${
-                      isChecked
+                    className={`px-2 py-0.5 rounded-full text-[11px] font-bold shrink-0 ${isChecked
                         ? 'bg-sky-600 text-white'
                         : hasListings
-                        ? 'bg-sky-100 text-sky-800'
-                        : 'bg-slate-100 text-slate-400'
-                    }`}
+                          ? 'bg-sky-100 text-sky-800'
+                          : 'bg-slate-100 text-slate-400'
+                      }`}
                   >
                     {city.count}
                   </span>
@@ -224,11 +215,10 @@ export const PrefectureCityPage: React.FC = () => {
               type="button"
               onClick={handleSearchSelected}
               disabled={selectedCitySlugs.length === 0}
-              className={`px-8 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer ${
-                selectedCitySlugs.length > 0
+              className={`px-8 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer ${selectedCitySlugs.length > 0
                   ? 'bg-gradient-to-r from-sky-600 to-blue-700 text-white hover:from-sky-700 hover:to-blue-800 shadow-sky-600/20'
                   : 'bg-slate-300 text-slate-500 cursor-not-allowed shadow-none'
-              }`}
+                }`}
             >
               <Search className="w-4 h-4" />
               <span>Search Selected Cities ({selectedCitySlugs.length})</span>

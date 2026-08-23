@@ -24,11 +24,11 @@ const SEARCH_OPTIONS: {
   label: string;
   icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 }[] = [
-  { id: 'station', label: 'Search by line & station', icon: TrainFront },
-  { id: 'area', label: 'Search by area / city', icon: MapPinned },
-  { id: 'map', label: 'Search on map', icon: Map },
-  { id: 'route', label: 'Search by route diagram', icon: Network },
-];
+    { id: 'station', label: 'Search by line & station', icon: TrainFront },
+    { id: 'area', label: 'Search by area / city', icon: MapPinned },
+    { id: 'map', label: 'Search on map', icon: Map },
+    { id: 'route', label: 'Search by route diagram', icon: Network },
+  ];
 
 const SKY_BLUE = '#0284c7';
 const PORTAL_ID = 'seahome-rental-search-modal-root';
@@ -57,7 +57,6 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
   context,
   onClose,
   onSearch,
-  onViewPrefecture,
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
