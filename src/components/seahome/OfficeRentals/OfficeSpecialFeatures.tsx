@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Sparkles, type LucideIcon } from 'lucide-react';
 import {
     OFFICE_SPECIAL_FEATURES_DATA,
@@ -11,13 +12,14 @@ interface OfficeSpecialFeaturesProps {
 }
 
 export const OfficeSpecialFeatures: React.FC<OfficeSpecialFeaturesProps> = ({ onNavigate }) => {
+    const navigate = useNavigate();
     const [isCriteriaExpanded, setIsCriteriaExpanded] = useState(false);
 
-    const handleCardClick = (link: string) => {
+    const handleCardClick = (link: string, itemId: string) => {
         if (onNavigate) {
             onNavigate(link);
         } else {
-            window.location.href = link;
+            navigate(`/seahome-real-estates/rental-office/feature/${itemId}`);
         }
     };
 
@@ -27,7 +29,7 @@ export const OfficeSpecialFeatures: React.FC<OfficeSpecialFeaturesProps> = ({ on
         return (
             <div
                 key={item.id}
-                onClick={() => handleCardClick(item.link)}
+                onClick={() => handleCardClick(item.link, item.id)}
                 className="group relative flex cursor-pointer items-start gap-3.5 rounded-lg border border-gray-200/90 bg-white p-3 sm:p-3.5 shadow-xs transition-all duration-200 hover:border-blue-400 hover:shadow-md"
             >
                 {/* Thumbnail Image */}

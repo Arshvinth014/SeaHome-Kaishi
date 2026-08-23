@@ -23,7 +23,7 @@ export const PREFECTURE_CITY_DATA: Record<string, PrefectureCityData> = {
   akita: {
     prefectureSlug: 'akita',
     prefectureName: 'Akita',
-    japaneseName: '秋田県',
+    japaneseName: 'Akita Prefecture',
     totalListings: 99,
     centerLat: 39.7186,
     centerLng: 140.1024,
@@ -59,7 +59,7 @@ export const PREFECTURE_CITY_DATA: Record<string, PrefectureCityData> = {
   niigata: {
     prefectureSlug: 'niigata',
     prefectureName: 'Niigata',
-    japaneseName: '新潟県',
+    japaneseName: 'Niigata Prefecture',
     totalListings: 142,
     centerLat: 37.9026,
     centerLng: 139.0232,
@@ -79,7 +79,7 @@ export const PREFECTURE_CITY_DATA: Record<string, PrefectureCityData> = {
   tokyo: {
     prefectureSlug: 'tokyo',
     prefectureName: 'Tokyo',
-    japaneseName: '東京都',
+    japaneseName: 'Tokyo Metropolis',
     totalListings: 1450,
     centerLat: 35.6762,
     centerLng: 139.6503,
@@ -98,7 +98,7 @@ export const PREFECTURE_CITY_DATA: Record<string, PrefectureCityData> = {
   osaka: {
     prefectureSlug: 'osaka',
     prefectureName: 'Osaka',
-    japaneseName: '大阪府',
+    japaneseName: 'Osaka Prefecture',
     totalListings: 890,
     centerLat: 34.6937,
     centerLng: 135.5023,

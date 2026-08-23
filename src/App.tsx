@@ -13,6 +13,8 @@ import SeahomeRentalMapSearchPage from './pages/SeahomeRentalMapSearchPage';
 import RentalShopPage from './pages/RentalShopPage';
 import RentalShopCategoryPage from './pages/RentalShopCategoryPage';
 import RentalOfficePage from './pages/RentalOfficePage';
+import RentalOfficeCategoryPage from './pages/RentalOfficeCategoryPage';
+import PrefectureCityPage from './pages/PrefectureCityPage';
 import RentalLandPage from './pages/RentalLandPage';
 import ParkingPage from './pages/ParkingPage';
 import WarehousePage from './pages/WarehousePage';
@@ -93,8 +95,16 @@ function App() {
           <Route path="rental" element={<SeahomeRentalPage />} />
           <Route path="rental-shop" element={<RentalShopPage />} />
           <Route path="rental-shop/category/:categorySlug" element={<RentalShopCategoryPage />} />
+          <Route path="rental-shop/:prefectureSlug/city" element={<PrefectureCityPage />} />
+          <Route path="rental-shop/:prefectureSlug/city/:citySlug" element={<PrefectureCityPage />} />
           <Route path="rental-shop/:categorySlug" element={<RentalShopCategoryPage />} />
           <Route path="rental-office" element={<RentalOfficePage />} />
+          <Route path="rental-office/size/:sizeId" element={<RentalOfficeCategoryPage />} />
+          <Route path="rental-office/feature/:featureId" element={<RentalOfficeCategoryPage />} />
+          <Route path="rental-office/category/:categorySlug" element={<RentalOfficeCategoryPage />} />
+          <Route path="rental-office/:prefectureSlug/city" element={<PrefectureCityPage />} />
+          <Route path="rental-office/:prefectureSlug/city/:citySlug" element={<PrefectureCityPage />} />
+          <Route path="rental-office/:sizeId" element={<RentalOfficeCategoryPage />} />
           <Route path="rental-land" element={<RentalLandPage />} />
           <Route path="parking" element={<ParkingPage />} />
           <Route path="warehouse" element={<WarehousePage />} />
