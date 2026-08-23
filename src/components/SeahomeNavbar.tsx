@@ -96,18 +96,9 @@ const SeahomeNavbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md shadow-xs">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        
+
         {/* Left Section: Get Started Button & Brand Logo */}
         <div className="flex items-center gap-4 sm:gap-6">
-          {/* Get Started Button */}
-          <button
-            type="button"
-            onClick={() => handleGo('/home')}
-            className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 px-3.5 py-2 text-xs font-semibold text-white shadow-md shadow-purple-500/20 transition-all hover:scale-[1.02] hover:from-purple-700 hover:to-indigo-700 focus:outline-hidden sm:px-4 sm:text-sm"
-          >
-            <img src="/BlueBirdBuyPage.png" alt="Sora" className="h-8 w-8 shrink-0" />
-            <span>Home</span>
-          </button>
 
           {/* Seahome Real Estates Logo & Title */}
           <Link
@@ -144,9 +135,8 @@ const SeahomeNavbar: React.FC = () => {
                   <Icon className="h-4 w-4 shrink-0 text-sky-700" />
                   <span className="whitespace-nowrap">{menu.label}</span>
                   <ChevronDown
-                    className={`h-3.5 w-3.5 shrink-0 text-sky-700 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
+                    className={`h-3.5 w-3.5 shrink-0 text-sky-700 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''
+                      }`}
                   />
                 </button>
 
