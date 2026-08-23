@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useLocation, useNavigate, useParams, useSearchParams, Link } from 'react-router-dom';
-import { ChevronRight, Search, Map, Layers, Network, MapPin, ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { ChevronRight, Search, Map, Layers, Network, MapPin, ArrowLeft } from 'lucide-react';
 import { HUB_CONTAINER } from '../components/seahome/seahomeHubLayout';
 import { RENTAL_PORTAL_PATH, rentalListingsUrl } from '../components/seahome/seahomeRentalLineSearchData';
 import { RENTAL_REGIONS } from '../components/seahome/seahomeRentalData';
