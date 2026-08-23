@@ -107,16 +107,16 @@ export const RentalShopBottom: React.FC = () => {
       </div>
 
       {/* ---------------- 3. Affiliated Store Promotion Box ---------------- */}
-      <div className="bg-gradient-to-r from-blue-50 via-indigo-50/50 to-blue-50/30 border border-blue-200/80 rounded-xl p-4 sm:p-5 shadow-xs hover:shadow-md transition-shadow">
+      <div className="bg-gradient-to-r from-sky-50 via-indigo-50/50 to-sky-50/30 border border-sky-200/80 rounded-xl p-4 sm:p-5 shadow-xs hover:shadow-md transition-shadow">
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
           {/* Thumbnail Image */}
-          <div className="relative w-full sm:w-36 h-24 rounded-lg overflow-hidden shrink-0 border border-blue-200 shadow-xs">
+          <div className="relative w-full sm:w-36 h-24 rounded-lg overflow-hidden shrink-0 border border-sky-200 shadow-xs">
             <img
               src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80"
-              alt="Sea Home Affiliated Store"
+              alt="SeaHome Net Affiliated Store"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-blue-900/10"></div>
+            <div className="absolute inset-0 bg-sky-900/10"></div>
           </div>
 
           {/* Text Content */}
@@ -124,13 +124,13 @@ export const RentalShopBottom: React.FC = () => {
             <button
               type="button"
               onClick={() => handleNavigate('/seahome-real-estates/rental-shop')}
-              className="inline-flex items-center space-x-1.5 text-base sm:text-lg font-bold text-blue-700 hover:text-blue-900 hover:underline tracking-tight group"
+              className="inline-flex items-center space-x-1.5 text-base sm:text-lg font-bold text-sky-700 hover:text-sky-900 hover:underline tracking-tight group"
             >
-              <Search className="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform" />
-              <span>Find an Sea Home affiliated store</span>
-              <ChevronRight className="w-4 h-4 text-blue-600" />
+              <Search className="w-4 h-4 text-sky-600 group-hover:scale-110 transition-transform" />
+              <span>Find a SeaHome Net affiliated store</span>
+              <ChevronRight className="w-4 h-4 text-sky-600" />
             </button>
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Find your perfect property quickly! Directly entrust your property search to the real estate company that's right for you!
             </p>
           </div>
@@ -139,8 +139,8 @@ export const RentalShopBottom: React.FC = () => {
 
       {/* ---------------- 4. Footer Explanatory Text ---------------- */}
       <div className="pt-2">
-        <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-normal">
-          For all your rental and vacant property needs, trust Sea Home. Sea Home, our real estate information website, makes it easy to find the perfect rental or vacant property to suit your needs.
+        <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+          For all your rental and vacant property needs, trust SeaHome Net. SeaHome Net, our real estate information website, makes it easy to find the perfect rental or vacant property to suit your needs.
         </p>
       </div>
     </div>

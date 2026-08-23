@@ -11,6 +11,7 @@ import SeahomeRentalPropertyDetailPage from './pages/SeahomeRentalPropertyDetail
 import SeahomeRentalFullMapPage from './pages/SeahomeRentalFullMapPage';
 import SeahomeRentalMapSearchPage from './pages/SeahomeRentalMapSearchPage';
 import RentalShopPage from './pages/RentalShopPage';
+import RentalShopCategoryPage from './pages/RentalShopCategoryPage';
 import RentalOfficePage from './pages/RentalOfficePage';
 import RentalLandPage from './pages/RentalLandPage';
 import ParkingPage from './pages/ParkingPage';
@@ -91,6 +92,8 @@ function App() {
           <Route path="JapanRyokanOnsenPage" element={<JapanRyokanOnsenPage />}/>
           <Route path="rental" element={<SeahomeRentalPage />} />
           <Route path="rental-shop" element={<RentalShopPage />} />
+          <Route path="rental-shop/category/:categorySlug" element={<RentalShopCategoryPage />} />
+          <Route path="rental-shop/:categorySlug" element={<RentalShopCategoryPage />} />
           <Route path="rental-office" element={<RentalOfficePage />} />
           <Route path="rental-land" element={<RentalLandPage />} />
           <Route path="parking" element={<ParkingPage />} />
