@@ -243,6 +243,18 @@ export const RentalOfficeCategoryPage: React.FC = () => {
   const targetId = sizeId || categorySlug || '10_30';
   const category = useMemo(() => getOfficeCategoryDetail(targetId), [targetId]);
 
+  const filteredProperties = useMemo(() => {
+    if (!selectedFeature) return category.sampleProperties;
+    const lower = selectedFeature.toLowerCase();
+    const matches = category.sampleProperties.filter(
+      (p) =>
+        p.badge.toLowerCase().includes(lower) ||
+        p.buildingName.toLowerCase().includes(lower) ||
+        p.location.toLowerCase().includes(lower)
+    );
+    return matches.length > 0 ? matches : category.sampleProperties;
+  }, [category.sampleProperties, selectedFeature]);
+
   const handleInquire = (buildingName: string) => {
     navigate(rentalListingsUrl(`/properties?q=${encodeURIComponent(buildingName)}`));
   };
@@ -361,7 +373,7 @@ export const RentalOfficeCategoryPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {category.sampleProperties.map((property) => (
+            {filteredProperties.map((property) => (
               <div
                 key={property.id}
                 className="rounded-2xl border border-sky-100 bg-white shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group"

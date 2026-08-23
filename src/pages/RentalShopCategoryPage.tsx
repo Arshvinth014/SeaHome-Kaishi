@@ -4,20 +4,15 @@ import {
   ChevronRight,
   Store,
   MapPin,
-  Building2,
   Sparkles,
-  Search,
   ArrowLeft,
   CheckCircle2,
   HelpCircle,
-  ExternalLink,
-  Heart,
   Mail,
   SlidersHorizontal,
-  Home,
 } from 'lucide-react';
 import { HUB_CONTAINER } from '../components/seahome/seahomeHubLayout';
-import { getRentalShopCategory, slugifyCategoryItem } from '../config/rentalShopCategories';
+import { getRentalShopCategory } from '../config/rentalShopCategories';
 import { PrefectureMapModal } from '../components/seahome/ShopRentals/PrefectureMapModal';
 import { rentalListingsUrl } from '../components/seahome/seahomeRentalLineSearchData';
 
@@ -32,8 +27,20 @@ export const RentalShopCategoryPage: React.FC = () => {
     [categorySlug]
   );
 
+  const filteredListings = useMemo(() => {
+    if (!selectedTag) return category.sampleListings;
+    const lowerTag = selectedTag.toLowerCase();
+    const matches = category.sampleListings.filter(
+      (listing) =>
+        listing.approvedTag.toLowerCase().includes(lowerTag) ||
+        listing.title.toLowerCase().includes(lowerTag) ||
+        listing.location.toLowerCase().includes(lowerTag)
+    );
+    return matches.length > 0 ? matches : category.sampleListings;
+  }, [category.sampleListings, selectedTag]);
+
   const handleInquire = (listingTitle: string) => {
-    navigate(rentalListingsUrl(`/properties?q=${encodeURIComponent(category.title)}`));
+    navigate(rentalListingsUrl(`/properties?q=${encodeURIComponent(listingTitle)}`));
   };
 
   return (
@@ -127,11 +134,10 @@ export const RentalShopCategoryPage: React.FC = () => {
                   key={tag}
                   type="button"
                   onClick={() => setSelectedTag(isSelected ? null : tag)}
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                    isSelected
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${isSelected
                       ? 'bg-sky-600 text-white shadow-md shadow-sky-600/20 border border-sky-500'
                       : 'bg-slate-50 text-slate-700 border border-slate-200 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-900'
-                  }`}
+                    }`}
                 >
                   <CheckCircle2 className={`w-3.5 h-3.5 ${isSelected ? 'text-white' : 'text-sky-500'}`} />
                   <span>{tag}</span>
@@ -152,7 +158,7 @@ export const RentalShopCategoryPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {category.sampleListings.map((listing) => (
+            {filteredListings.map((listing) => (
               <div
                 key={listing.id}
                 className="rounded-2xl border border-sky-100 bg-white shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group"
