@@ -174,7 +174,23 @@ export const PrefectureMapModal: React.FC<PrefectureMapModalProps> = ({ isOpen, 
           <SeahomeRentalCitySearchModal
             context={citySearchModal}
             onClose={closeCitySearchModal}
-            onSearch={() => openListings('/properties')}
+            onSearch={(method) => {
+              if (method === 'station') {
+                const slug = citySearchModal.prefectureSlug || 'niigata';
+                navigate(`/seahome-real-estates/rental/search-by-line-station/${slug}`, {
+                  state: {
+                    prefectureSlug: slug,
+                    prefectureName: citySearchModal.prefectureName,
+                    citySlug: citySearchModal.city?.slug,
+                    cityName: citySearchModal.city?.name,
+                  },
+                });
+                closeCitySearchModal();
+                onClose();
+              } else {
+                openListings(`/properties?method=${method}&prefecture=${citySearchModal.prefectureSlug}`);
+              }
+            }}
             onViewPrefecture={() => openListings('/properties')}
           />
         ) : null}

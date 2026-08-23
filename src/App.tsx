@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet, useLocation } from 'react-router-dom';
 import SeahomeNavbar from './components/SeahomeNavbar';
+import SeahomeFloatingSidebar from './components/SeahomeFloatingSidebar';
 import SeahomeRealEstates from './pages/SeahomeRealEstates';
 import SeahomeRentalPage from './pages/SeahomeRentalPage';
 import SeahomeRentalLineStationSearchPage from './pages/SeahomeRentalLineStationSearchPage';
@@ -8,6 +9,7 @@ import SeahomeRentalLineDetailPage from './pages/SeahomeRentalLineDetailPage';
 import SeahomeRentalStationResultsPage from './pages/SeahomeRentalStationResultsPage';
 import SeahomeRentalPropertyDetailPage from './pages/SeahomeRentalPropertyDetailPage';
 import SeahomeRentalFullMapPage from './pages/SeahomeRentalFullMapPage';
+import SeahomeRentalMapSearchPage from './pages/SeahomeRentalMapSearchPage';
 import RentalShopPage from './pages/RentalShopPage';
 import RentalOfficePage from './pages/RentalOfficePage';
 import RentalLandPage from './pages/RentalLandPage';
@@ -45,8 +47,9 @@ function PublicLayout() {
 
 function SeahomeLayout() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen bg-slate-50 text-slate-900 relative">
       <SeahomeNavbar />
+      <SeahomeFloatingSidebar />
       <main>
         <Outlet />
       </main>
@@ -109,6 +112,8 @@ function App() {
             path="rental/search-by-line-station/:locationSlug/:lineSlug/:stationSlug/:apartmentId"
             element={<SeahomeRentalPropertyDetailPage />}
           />
+          <Route path="rental/search-by-map" element={<SeahomeRentalMapSearchPage />} />
+          <Route path="rental/search-by-map/:locationSlug" element={<SeahomeRentalMapSearchPage />} />
           <Route path="rental/map" element={<SeahomeRentalFullMapPage />} />
           <Route path="*" element={<Navigate to="/seahome-real-estates" replace />} />
         </Route>

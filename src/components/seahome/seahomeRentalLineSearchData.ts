@@ -176,10 +176,50 @@ const KANAGAWA_OPERATORS: RentalRailOperator[] = [
   },
 ];
 
+const NIIGATA_OPERATORS: RentalRailOperator[] = [
+  {
+    id: 'jr',
+    name: 'JR',
+    lines: [
+      { id: 'jr-shinetsu', name: "JR Shin'etsu Main Line", listingCount: 140 },
+      { id: 'jr-echigo', name: 'JR Echigo Line', listingCount: 123 },
+      { id: 'jr-uetsu', name: 'JR Uetsu Main Line', listingCount: 21 },
+      { id: 'jr-hakushin', name: 'JR Hakushin Line', listingCount: 95 },
+      { id: 'jr-banetsu-west', name: "JR Ban'etsu West Line", listingCount: 8 },
+      { id: 'jr-iiyama', name: 'JR Iiyama Line', listingCount: 1 },
+      { id: 'jr-tadami', name: 'JR Tadami Line', listingCount: 0 },
+      { id: 'jr-yonesaka', name: 'JR Yonesaka Line', listingCount: 0 },
+      { id: 'jr-yahiko', name: 'JR Yahiko Line', listingCount: 22 },
+      { id: 'jr-oito', name: 'JR Oito Line (Minami-Otari to Itoigawa)', listingCount: 0 },
+      { id: 'jr-joetsu', name: 'JR Joetsu Line', listingCount: 31 },
+    ],
+  },
+  {
+    id: 'shinkansen',
+    name: 'Bullet Train (Shinkansen)',
+    lines: [
+      { id: 'shinkansen-joetsu', name: 'Joetsu Shinkansen', listingCount: 114 },
+      { id: 'shinkansen-hokuriku', name: 'JR Hokuriku Shinkansen', listingCount: 1 },
+    ],
+  },
+  {
+    id: 'others',
+    name: 'Private Railways & Others',
+    lines: [
+      { id: 'hokuetsu-express', name: 'Hokuetsu Express Hokuhoku Line', listingCount: 1 },
+      { id: 'shinano-railway', name: 'Shinano Railway Kita-Shinano', listingCount: 0 },
+      { id: 'myoko-hanema', name: 'Myoko Hanema Line', listingCount: 10 },
+      { id: 'ainokaze-toyama', name: 'Ainokaze Toyama Railway', listingCount: 0 },
+      { id: 'japan-sea-jade', name: 'Japan Sea Jade Line', listingCount: 0 },
+    ],
+  },
+];
+
 const BY_PREFECTURE: Record<string, RentalRailOperator[]> = {
   chiba: CHIBA_OPERATORS,
   tokyo: TOKYO_OPERATORS,
   kanagawa: KANAGAWA_OPERATORS,
+  niigata: NIIGATA_OPERATORS,
 };
 
 function genericOperators(prefectureName: string): RentalRailOperator[] {

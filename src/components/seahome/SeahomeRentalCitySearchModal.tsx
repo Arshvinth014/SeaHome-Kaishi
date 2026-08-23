@@ -29,7 +29,7 @@ const SEARCH_OPTIONS: {
   { id: 'route', label: 'Search by route diagram', icon: Network },
 ];
 
-const CRIMSON = '#c80032';
+const SKY_BLUE = '#0284c7';
 const PORTAL_ID = 'seahome-rental-search-modal-root';
 
 function getPortalNode(): HTMLElement {
@@ -83,18 +83,18 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]" aria-hidden />
+      <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px]" aria-hidden />
 
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="rental-city-search-title"
-        className="relative z-10 w-full max-w-lg rounded-xl border border-gray-200 bg-white shadow-2xl"
+        className="relative z-10 w-full max-w-lg rounded-2xl border border-sky-100 bg-white shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className="absolute -top-3 left-4 rounded-md border-2 bg-white px-3 py-1 text-xs font-bold shadow-sm sm:text-sm"
-          style={{ borderColor: CRIMSON, color: CRIMSON }}
+          className="absolute -top-3 left-4 rounded-lg border-2 bg-white px-3 py-1 text-xs font-extrabold shadow-sm sm:text-sm"
+          style={{ borderColor: SKY_BLUE, color: SKY_BLUE }}
         >
           Choose how to search
         </div>
@@ -102,8 +102,8 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
         <button
           type="button"
           onClick={onClose}
-          className="absolute -top-3 right-3 z-20 inline-flex items-center gap-1 rounded px-2.5 py-1 text-xs font-bold text-white shadow-md transition hover:brightness-110 sm:text-sm"
-          style={{ backgroundColor: CRIMSON }}
+          className="absolute -top-3 right-3 z-20 inline-flex items-center gap-1 rounded-lg px-3 py-1 text-xs font-bold text-white shadow-md transition hover:brightness-110 sm:text-sm cursor-pointer"
+          style={{ backgroundColor: SKY_BLUE }}
           aria-label="Close"
         >
           <X className="h-3.5 w-3.5" strokeWidth={2.5} />
@@ -118,14 +118,14 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
             {city ? (
               <>
                 Rental listings in{' '}
-                <span style={{ color: CRIMSON }}>
+                <span style={{ color: SKY_BLUE }}>
                   {city.name}, {prefectureName}
                 </span>
               </>
             ) : (
               <>
                 Rental listings in{' '}
-                <span style={{ color: CRIMSON }}>{prefectureName}</span>
+                <span style={{ color: SKY_BLUE }}>{prefectureName}</span>
               </>
             )}
           </h2>
@@ -136,21 +136,21 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
                 key={id}
                 type="button"
                 onClick={() => onSearch(id)}
-                className="group flex min-h-[4.25rem] items-center gap-3 rounded-lg border-2 bg-white px-3 py-3 text-left transition hover:bg-red-50/40 sm:min-h-[4.75rem] sm:px-4"
-                style={{ borderColor: `${CRIMSON}33` }}
+                className="group flex min-h-[4.25rem] items-center gap-3 rounded-xl border-2 bg-white px-3 py-3 text-left transition hover:bg-sky-50/60 hover:border-sky-500 sm:min-h-[4.75rem] sm:px-4 cursor-pointer"
+                style={{ borderColor: `${SKY_BLUE}33` }}
               >
                 <span
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 bg-white"
-                  style={{ borderColor: CRIMSON, color: CRIMSON }}
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 bg-white group-hover:bg-sky-50 transition-colors"
+                  style={{ borderColor: SKY_BLUE, color: SKY_BLUE }}
                 >
                   <Icon className="h-5 w-5" strokeWidth={1.75} />
                 </span>
-                <span className="min-w-0 flex-1 text-sm font-bold leading-snug text-slate-800 sm:text-[15px]">
+                <span className="min-w-0 flex-1 text-sm font-bold leading-snug text-slate-800 sm:text-[15px] group-hover:text-sky-900">
                   {label}
                 </span>
                 <ChevronRight
                   className="h-5 w-5 shrink-0 opacity-70 transition group-hover:translate-x-0.5"
-                  style={{ color: CRIMSON }}
+                  style={{ color: SKY_BLUE }}
                   strokeWidth={2.5}
                 />
               </button>
@@ -160,9 +160,9 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
           <button
             type="button"
             onClick={onViewPrefecture}
-            className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-sky-700 underline decoration-sky-400/80 underline-offset-2 transition hover:text-sky-900"
+            className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-sky-700 underline decoration-sky-400/80 underline-offset-2 transition hover:text-sky-900 cursor-pointer"
           >
-            <span className="text-[10px]" style={{ color: CRIMSON }} aria-hidden>
+            <span className="text-[10px]" style={{ color: SKY_BLUE }} aria-hidden>
               ▶
             </span>
             View all rentals in {prefectureName}
