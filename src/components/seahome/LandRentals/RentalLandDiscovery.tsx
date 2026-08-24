@@ -76,29 +76,38 @@ export const RentalLandDiscovery: React.FC<RentalLandDiscoveryProps> = ({ onNavi
                         className="no-scrollbar flex gap-4 overflow-x-auto scroll-smooth py-1 px-1"
                     >
                         {WHAT_S_NEW_LAND_LISTINGS.map((item: LandListingItem) => (
-                            <div
+                            <a
                                 key={item.id}
-                                onClick={() => handleLinkClick(item.link)}
-                                className="group/card flex w-44 shrink-0 flex-col cursor-pointer rounded-lg border border-gray-100 bg-white p-2.5 shadow-2xs transition-all duration-200 hover:border-blue-400 hover:shadow-md sm:w-48"
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    window.open(item.link, '_blank', 'noopener,noreferrer');
+                                }}
+                                className="group/card flex w-44 shrink-0 flex-col cursor-pointer rounded-xl border border-sky-100 bg-white p-2.5 shadow-xs transition-all duration-300 ease-out hover:-translate-y-1 hover:border-sky-400 hover:shadow-md sm:w-48 tv-focusable"
                             >
-                                <span className="mb-1.5 text-xs font-bold text-gray-800 line-clamp-1">
+                                <span className="mb-1.5 inline-block w-fit rounded-md bg-sky-50 px-2 py-0.5 text-[11px] font-extrabold text-sky-800 border border-sky-200/60 line-clamp-1">
                                     {item.category}
                                 </span>
-                                <div className="relative mb-2 h-28 w-full overflow-hidden rounded-xs border border-gray-100 bg-gray-100 sm:h-32">
+                                <div className="relative mb-2 h-28 w-full overflow-hidden rounded-lg border border-sky-100 bg-gray-100 sm:h-32">
                                     <img
                                         src={item.imageUrl}
                                         alt={item.stationWalk}
-                                        className="h-full w-full object-cover transition-transform duration-300 group-hover/card:scale-105"
+                                        className="h-full w-full object-cover transition-transform duration-500 group-hover/card:scale-110"
                                         loading="lazy"
                                     />
+                                    <span className="absolute bottom-1 right-1 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-bold text-white">
+                                        SeaHome
+                                    </span>
                                 </div>
-                                <h4 className="text-xs font-bold leading-tight text-gray-900 line-clamp-2">
+                                <h4 className="text-xs font-bold leading-tight text-slate-900 transition-colors group-hover/card:text-sky-700 line-clamp-2">
                                     {item.stationWalk}
                                 </h4>
-                                <p className="mt-1 text-xs text-gray-600">
-                                    {item.price} / {item.size}
+                                <p className="mt-1.5 text-xs font-extrabold text-sky-800">
+                                    {item.price} <span className="font-normal text-gray-500">/ {item.size}</span>
                                 </p>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>
