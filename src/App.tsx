@@ -17,6 +17,8 @@ import RentalOfficeCategoryPage from './pages/RentalOfficeCategoryPage';
 import PrefectureCityPage from './pages/PrefectureCityPage';
 import RentalLandPage from './pages/RentalLandPage';
 import SeahomeRentalLandDetailPage from './pages/SeahomeRentalLandDetailPage';
+import SeahomeUsefulToolsPage from './pages/SeahomeUsefulToolsPage';
+import SeahomeRealEstateGlossaryPage from './pages/SeahomeRealEstateGlossaryPage';
 import ParkingPage from './pages/ParkingPage';
 import WarehousePage from './pages/WarehousePage';
 import RentalBuildingOtherPage from './pages/RentalBuildingOtherPage';
@@ -109,6 +111,8 @@ function App() {
           <Route path="rental-land" element={<RentalLandPage />} />
           <Route path="rental-land/detail/:landId" element={<SeahomeRentalLandDetailPage />} />
           <Route path="rental-land/:landId" element={<SeahomeRentalLandDetailPage />} />
+          <Route path="useful-tools" element={<SeahomeUsefulToolsPage />} />
+          <Route path="glossary" element={<SeahomeRealEstateGlossaryPage />} />
           <Route path="parking" element={<ParkingPage />} />
           <Route path="warehouse" element={<WarehousePage />} />
           <Route path="rental-building-other" element={<RentalBuildingOtherPage />} />

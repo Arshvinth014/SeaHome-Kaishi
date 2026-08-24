@@ -147,14 +147,19 @@ export const RentalLandDiscovery: React.FC<RentalLandDiscoveryProps> = ({ onNavi
 
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-xs font-medium sm:text-sm">
                     {SEARCH_TOOLS_LAND.map((item: NamedLink, idx: number) => (
-                        <button
+                        <a
                             key={idx}
-                            type="button"
-                            onClick={() => handleLinkClick(item.path)}
-                            className="text-blue-600 underline hover:text-blue-800"
+                            href={item.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open(item.path, '_blank', 'noopener,noreferrer');
+                            }}
+                            className="text-blue-600 underline hover:text-blue-800 font-semibold"
                         >
                             {item.label}
-                        </button>
+                        </a>
                     ))}
                 </div>
             </section>
@@ -172,13 +177,18 @@ export const RentalLandDiscovery: React.FC<RentalLandDiscoveryProps> = ({ onNavi
                         </span>
                     </div>
 
-                    <button
-                        type="button"
-                        onClick={() => handleLinkClick('/tools/glossary')}
-                        className="text-xs font-medium text-blue-600 underline hover:text-blue-800"
+                    <a
+                        href="/seahome-real-estates/glossary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            window.open('/seahome-real-estates/glossary', '_blank', 'noopener,noreferrer');
+                        }}
+                        className="text-xs font-semibold text-blue-600 underline hover:text-blue-800 cursor-pointer"
                     >
                         Look up other real estate terms
-                    </button>
+                    </a>
                 </div>
 
                 <p className="mt-1 text-xs text-gray-700 md:hidden">
@@ -187,14 +197,19 @@ export const RentalLandDiscovery: React.FC<RentalLandDiscoveryProps> = ({ onNavi
 
                 <div className="mt-3.5 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium sm:text-sm">
                     {LEASED_LAND_TERMS.map((item: NamedLink, idx: number) => (
-                        <button
+                        <a
                             key={idx}
-                            type="button"
-                            onClick={() => handleLinkClick(item.path)}
-                            className="text-blue-600 underline hover:text-blue-800"
+                            href={item.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open(item.path, '_blank', 'noopener,noreferrer');
+                            }}
+                            className="text-blue-600 underline hover:text-blue-800 font-semibold cursor-pointer"
                         >
                             {item.label}
-                        </button>
+                        </a>
                     ))}
                 </div>
             </section>

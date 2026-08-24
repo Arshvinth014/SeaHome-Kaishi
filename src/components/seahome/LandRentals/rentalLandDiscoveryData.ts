@@ -118,15 +118,15 @@ export const OTHER_PROPERTY_TYPES_LAND: NamedLink[] = [
 ];
 
 export const SEARCH_TOOLS_LAND: NamedLink[] = [
-    { label: 'Useful information and tools for housing and real estate', path: '/tools/useful-info' },
-    { label: 'Real Estate Glossary', path: '/tools/glossary' },
+    { label: 'Useful information and tools for housing and real estate', path: '/seahome-real-estates/useful-tools' },
+    { label: 'Real Estate Glossary', path: '/seahome-real-estates/glossary' },
 ];
 
 export const LEASED_LAND_TERMS: NamedLink[] = [
-    { label: 'Surface rights', path: '/glossary/surface-rights' },
-    { label: 'Land lease rights', path: '/glossary/land-lease-rights' },
-    { label: 'Vacant land', path: '/glossary/vacant-land' },
-    { label: 'Land Lease and House Lease Law', path: '/glossary/lease-law' },
+    { label: 'Surface rights', path: '/seahome-real-estates/glossary' },
+    { label: 'Land lease rights', path: '/seahome-real-estates/glossary' },
+    { label: 'Vacant land', path: '/seahome-real-estates/glossary' },
+    { label: 'Land Lease and House Lease Law', path: '/seahome-real-estates/glossary' },
 ];
 
 export const AFFILIATED_STORE_BANNER_LAND = {
