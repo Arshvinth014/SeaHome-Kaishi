@@ -81,38 +81,44 @@ export const ParkingDiscovery: React.FC<ParkingDiscoveryProps> = ({ onNavigate }
                         className="no-scrollbar flex gap-4 overflow-x-auto scroll-smooth py-1 px-1"
                     >
                         {WHAT_S_NEW_PARKING_LISTINGS.map((item: ParkingListingItem) => (
-                            <div
+                            <a
                                 key={item.id}
-                                onClick={() => handleLinkClick(item.link)}
-                                className="group/card flex w-44 shrink-0 flex-col cursor-pointer rounded-lg border border-gray-100 bg-white p-2.5 shadow-2xs transition-all duration-200 hover:border-blue-400 hover:shadow-md sm:w-48"
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    window.open(item.link, '_blank', 'noopener,noreferrer');
+                                }}
+                                className="group/card flex w-44 shrink-0 flex-col cursor-pointer rounded-xl border border-sky-100 bg-white p-2.5 shadow-xs transition-all duration-300 ease-out hover:-translate-y-1 hover:border-sky-400 hover:shadow-md sm:w-48 tv-focusable"
                             >
                                 <div className="mb-1.5 flex items-center justify-between">
-                                    <span className="text-[11px] font-semibold text-gray-500 flex items-center gap-1">
-                                        <Car className="h-3 w-3 text-blue-500" />
+                                    <span className="inline-block rounded-md bg-sky-50 px-2 py-0.5 text-[11px] font-extrabold text-sky-800 border border-sky-200/60 flex items-center gap-1">
+                                        <Car className="h-3 w-3 text-sky-600" />
                                         {item.label}
                                     </span>
                                 </div>
 
-                                <div className="relative mb-2 h-28 w-full overflow-hidden rounded-xs border border-gray-100 bg-gray-100 sm:h-32">
+                                <div className="relative mb-2 h-28 w-full overflow-hidden rounded-lg border border-sky-100 bg-gray-100 sm:h-32">
                                     <img
                                         src={item.imageUrl}
                                         alt={item.title}
-                                        className="h-full w-full object-cover transition-transform duration-300 group-hover/card:scale-105"
+                                        className="h-full w-full object-cover transition-transform duration-500 group-hover/card:scale-110"
                                         loading="lazy"
                                     />
-                                    <span className="absolute bottom-1 right-1 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-medium text-white backdrop-blur-xs">
-                                        Parking
+                                    <span className="absolute bottom-1 right-1 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-bold text-white backdrop-blur-xs">
+                                        SeaHome
                                     </span>
                                 </div>
 
-                                <h4 className="text-xs font-bold leading-snug text-gray-800 transition-colors group-hover/card:text-blue-600 line-clamp-2 min-h-[2.2rem]">
+                                <h4 className="text-xs font-bold leading-snug text-slate-900 transition-colors group-hover/card:text-sky-700 line-clamp-2 min-h-[2.2rem]">
                                     {item.title}
                                 </h4>
 
-                                <p className="mt-1.5 text-xs font-bold text-blue-600">
+                                <p className="mt-1.5 text-xs font-extrabold text-sky-800">
                                     {item.price}
                                 </p>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>

@@ -20,6 +20,7 @@ import SeahomeRentalLandDetailPage from './pages/SeahomeRentalLandDetailPage';
 import SeahomeUsefulToolsPage from './pages/SeahomeUsefulToolsPage';
 import SeahomeRealEstateGlossaryPage from './pages/SeahomeRealEstateGlossaryPage';
 import ParkingPage from './pages/ParkingPage';
+import SeahomeRentalParkingDetailPage from './pages/SeahomeRentalParkingDetailPage';
 import WarehousePage from './pages/WarehousePage';
 import RentalBuildingOtherPage from './pages/RentalBuildingOtherPage';
 import JapanHotelsPage from './pages/JapanHotelsPage';
@@ -114,6 +115,8 @@ function App() {
           <Route path="useful-tools" element={<SeahomeUsefulToolsPage />} />
           <Route path="glossary" element={<SeahomeRealEstateGlossaryPage />} />
           <Route path="parking" element={<ParkingPage />} />
+          <Route path="parking/detail/:parkingId" element={<SeahomeRentalParkingDetailPage />} />
+          <Route path="parking/:parkingId" element={<SeahomeRentalParkingDetailPage />} />
           <Route path="warehouse" element={<WarehousePage />} />
           <Route path="rental-building-other" element={<RentalBuildingOtherPage />} />
           <Route
