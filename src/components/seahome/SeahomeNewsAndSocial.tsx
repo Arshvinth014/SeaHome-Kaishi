@@ -177,24 +177,25 @@ const SeahomeNewsAndSocial: React.FC<Props> = ({ onNavigate, containerClass }) =
             </div>
 
             {/* Spotlight */}
-            <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+            <div className="rounded-xl border border-sky-100/90 bg-white/95 p-4.5 shadow-xs transition-all duration-300 hover:border-sky-300 hover:shadow-md">
               <div className="mb-3 flex items-center gap-2">
-                <DoorOpen className="h-5 w-5 text-red-600" aria-hidden />
-                <h2 className="text-base font-bold text-red-700">Door to tomorrow</h2>
+                <DoorOpen className="h-5 w-5 text-red-600 animate-pulse" aria-hidden />
+                <h2 className="text-base font-extrabold text-red-700">Door to tomorrow</h2>
               </div>
               <div className="flex gap-3">
                 <div
-                  className="h-16 w-16 shrink-0 rounded-md bg-gradient-to-br from-sky-200 to-sky-400"
+                  className="h-16 w-16 shrink-0 rounded-xl bg-cover bg-center shadow-xs ring-1 ring-sky-200/60"
+                  style={{ backgroundImage: `url('/images/seahome/japan_traditional_ryokan.png')` }}
                   aria-hidden
                 />
                 <div className="min-w-0 text-sm">
-                  <p className="font-bold text-gray-900">S. Ito</p>
-                  <p className="mt-0.5 text-gray-600">Real estate advisor · Bilingual support</p>
+                  <p className="font-extrabold text-sky-950">S. Ito</p>
+                  <p className="mt-0.5 text-xs font-medium text-gray-600">Real estate advisor · Bilingual support</p>
                   <p className="mt-1 text-xs text-gray-400">Updated {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</p>
                   <button
                     type="button"
                     onClick={() => onNavigate('/find-agent')}
-                    className="mt-2 text-xs font-semibold text-sky-600 hover:underline"
+                    className="mt-2 text-xs font-extrabold text-sky-600 transition-colors hover:text-sky-800 hover:underline tv-focusable"
                   >
                     Read story
                   </button>
@@ -208,11 +209,11 @@ const SeahomeNewsAndSocial: React.FC<Props> = ({ onNavigate, containerClass }) =
       {/* Official SNS */}
       <section className="border-t border-gray-200/80 py-8 sm:py-10" aria-labelledby="official-sns-heading">
         <div className={containerClass}>
-          <h2 id="official-sns-heading" className="text-base font-bold text-gray-900 sm:text-lg">
+          <h2 id="official-sns-heading" className="text-base font-extrabold text-sky-950 sm:text-lg">
             Official social channels
           </h2>
           <p className="mt-1 text-sm text-gray-600">
-            <span className="font-semibold text-sky-800">Seahome Real Estates</span> on Kaishi Nihon — follow for
+            <span className="font-bold text-sky-800">Seahome Real Estates</span> on Kaishi Nihon — follow for
             listings, area tips, and student housing updates.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
@@ -227,7 +228,7 @@ const SeahomeNewsAndSocial: React.FC<Props> = ({ onNavigate, containerClass }) =
                 href={sns.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex h-12 w-12 items-center justify-center rounded-lg text-xs font-bold text-white shadow-sm transition hover:opacity-90 sm:h-14 sm:w-14 sm:text-sm ${sns.bg}`}
+                className={`flex h-12 w-12 items-center justify-center rounded-xl text-xs font-black text-white shadow-xs transition-all duration-300 hover:scale-110 hover:shadow-md active:scale-95 tv-focusable sm:h-14 sm:w-14 sm:text-sm ${sns.bg}`}
                 aria-label={sns.label}
               >
                 {sns.letter}

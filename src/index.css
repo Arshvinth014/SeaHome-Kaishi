@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
 
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -49,4 +51,125 @@ html, body, #root {
   background: rgba(255, 255, 255, 0.75);
   padding: 2px 6px;
   max-width: 50%;
+}
+
+/* Seahome Custom Animations & Aesthetic Polish */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes shimmerEffect {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+
+  100% {
+    transform: translateX(250%) rotate(25deg);
+  }
+}
+
+@keyframes softGlowPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 20px -2px rgba(14, 165, 233, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 8px 30px 2px rgba(14, 165, 233, 0.35);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: softGlowPulse 3s ease-in-out infinite;
+}
+
+.shimmer-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-overlay::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent);
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.shimmer-overlay:hover::after {
+  opacity: 1;
+  animation: shimmerEffect 1.2s ease-out;
+}
+
+/* Glassmorphism & High-End Property Card Polish */
+.seahome-glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.seahome-card-lift {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.seahome-card-lift:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(14, 165, 233, 0.15);
+}
+
+.seahome-card-lift:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* TV Screen & Accessibility Focus Ring */
+@media (min-width: 1920px) {
+  .tv-enhanced-text {
+    font-size: 1.1em;
+  }
+}
+
+.tv-focusable:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 3px;
+  transform: scale(1.03);
+  z-index: 20;
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
 }

@@ -26,7 +26,7 @@ type HorizontalCard = {
 };
 
 const cardBase =
-  'group flex w-full gap-4 rounded-xl border border-gray-200 bg-white p-4 text-left shadow-sm transition hover:border-sky-200 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 sm:p-5';
+  'group flex w-full gap-4 rounded-xl border border-sky-100/90 bg-white/95 p-4 text-left shadow-xs transition-all duration-300 ease-out hover:-translate-y-1 hover:border-sky-300 hover:bg-gradient-to-b hover:from-white hover:to-sky-50/60 hover:shadow-md active:scale-95 tv-focusable shimmer-overlay sm:p-5';
 
 const HorizontalFeatureCard: React.FC<{
   card: HorizontalCard;
@@ -35,21 +35,21 @@ const HorizontalFeatureCard: React.FC<{
 }> = ({ card, onNavigate, large }) => (
   <button type="button" onClick={() => onNavigate(card.path)} className={cardBase}>
     <div
-      className={`flex shrink-0 items-center justify-center rounded-xl ${
+      className={`flex shrink-0 items-center justify-center rounded-xl shadow-xs transition-transform duration-300 group-hover:scale-110 ${
         large ? 'h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem]' : 'h-14 w-14'
-      } ${card.iconClassName ?? 'bg-sky-50 text-sky-600'}`}
+      } ${card.iconClassName ?? 'bg-gradient-to-br from-sky-50 to-sky-100 text-sky-600 ring-1 ring-sky-200/60'}`}
     >
       {card.icon}
     </div>
     <div className="min-w-0 flex-1">
       <h3
-        className={`font-bold leading-snug text-sky-700 ${
+        className={`font-extrabold leading-snug text-sky-950 transition-colors group-hover:text-sky-700 ${
           large ? 'text-sm sm:text-base' : 'text-sm'
         }`}
       >
         {card.title}
       </h3>
-      <p className="mt-1.5 text-xs leading-relaxed text-gray-600 sm:text-sm">{card.description}</p>
+      <p className="mt-1.5 text-xs font-medium leading-relaxed text-gray-600 group-hover:text-gray-800 sm:text-sm">{card.description}</p>
     </div>
   </button>
 );
