@@ -70,23 +70,23 @@ export const OTHER_PROPERTY_TYPES_BUILDING: NamedLink[] = [
 ];
 
 export const SEARCH_TOOLS_BUILDING: NamedLink[] = [
-    { label: 'Useful information and tools for housing and real estate', path: '/tools/housing-tools' },
-    { label: 'Real Estate Glossary', path: '/tools/glossary' },
+    { label: 'Useful information and tools for housing and real estate', path: '/seahome-real-estates/useful-tools' },
+    { label: 'Real Estate Glossary', path: '/seahome-real-estates/glossary' },
 ];
 
 export const RENTAL_BUILDING_TERMS: NamedLink[] = [
-    { label: 'Built-in', path: '/tools/glossary#built-in' },
-    { label: 'Common area maintenance fees', path: '/tools/glossary#maintenance-fees' },
-    { label: 'Sublease', path: '/tools/glossary#sublease' },
-    { label: 'Leasing', path: '/tools/glossary#leasing' },
+    { label: 'Built-in', path: '/seahome-real-estates/glossary' },
+    { label: 'Common area maintenance fees', path: '/seahome-real-estates/glossary' },
+    { label: 'Sublease', path: '/seahome-real-estates/glossary' },
+    { label: 'Leasing', path: '/seahome-real-estates/glossary' },
 ];
 
 export const AFFILIATED_STORE_BANNER_BUILDING_DATA = {
-    title: 'Find an At Home affiliated store',
+    title: 'Find a SeaHome affiliated store',
     description: "Find your perfect property quickly! Directly entrust your property search to the real estate company that's right for you!",
     imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80',
     link: '/properties?type=building',
 };
 
 export const FOOTER_DISCLAIMER_BUILDING_TEXT =
-    'For all your commercial property needs, including office buildings and other commercial rental properties, trust At Home. At Home, our real estate information website, makes it easy to find the perfect commercial rental property to suit your needs.';
+    'For all your commercial property needs, including office buildings and other commercial rental properties, trust SeaHome. SeaHome, our real estate information website, makes it easy to find the perfect commercial rental property to suit your needs.';

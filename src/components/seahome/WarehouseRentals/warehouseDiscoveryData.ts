@@ -70,8 +70,8 @@ export const OTHER_PROPERTY_TYPES_WAREHOUSE: NamedLink[] = [
 ];
 
 export const SEARCH_TOOLS_WAREHOUSE: NamedLink[] = [
-    { label: 'Useful information and tools for housing and real estate', path: '/tools/housing-tools' },
-    { label: 'Real Estate Glossary', path: '/tools/glossary' },
+    { label: 'Useful information and tools for housing and real estate', path: '/seahome-real-estates/useful-tools' },
+    { label: 'Real Estate Glossary', path: '/seahome-real-estates/glossary' },
 ];
 
 export const NOTABLE_CITIES_WAREHOUSE: NamedLink[] = [
@@ -111,11 +111,11 @@ export const STATIONS_TO_WATCH_WAREHOUSE: NamedLink[] = [
 ];
 
 export const AFFILIATED_STORE_BANNER_WAREHOUSE_DATA = {
-    title: 'Find an At Home affiliated store',
+    title: 'Find a SeaHome affiliated store',
     description: "Find your perfect property quickly! Directly entrust your property search to the real estate company that's right for you!",
     imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80',
     link: '/properties?type=warehouse',
 };
 
 export const FOOTER_DISCLAIMER_WAREHOUSE_TEXT =
-    'For all your warehouse rental needs, trust At Home. At Home, a real estate information website, makes it easy to find the perfect warehouse or storage property to suit your needs.';
+    'For all your warehouse rental needs, trust SeaHome. SeaHome, a real estate information website, makes it easy to find the perfect warehouse or storage property to suit your needs.';

@@ -81,23 +81,23 @@ export const OTHER_PROPERTY_TYPES_PARKING: NamedLink[] = [
 ];
 
 export const SEARCH_TOOLS_PARKING: NamedLink[] = [
-    { label: 'Useful information and tools for housing and real estate', path: '/tools/housing-tools' },
-    { label: 'Real Estate Glossary', path: '/tools/glossary' },
+    { label: 'Useful information and tools for housing and real estate', path: '/seahome-real-estates/useful-tools' },
+    { label: 'Real Estate Glossary', path: '/seahome-real-estates/glossary' },
 ];
 
 export const PARKING_TERMS: NamedLink[] = [
-    { label: 'landlord', path: '/tools/glossary#landlord' },
-    { label: 'public road', path: '/tools/glossary#public-road' },
-    { label: 'Rent', path: '/tools/glossary#rent' },
-    { label: 'Parking area', path: '/tools/glossary#parking-area' },
+    { label: 'landlord', path: '/seahome-real-estates/glossary' },
+    { label: 'public road', path: '/seahome-real-estates/glossary' },
+    { label: 'Rent', path: '/seahome-real-estates/glossary' },
+    { label: 'Parking area', path: '/seahome-real-estates/glossary' },
 ];
 
 export const AFFILIATED_STORE_BANNER_DATA = {
-    title: 'Find an At Home affiliated store',
+    title: 'Find a SeaHome affiliated store',
     description: "Find your perfect property quickly! Directly entrust your property search to the real estate company that's right for you!",
     imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80',
     link: '/properties?type=parking',
 };
 
 export const FOOTER_DISCLAIMER_PARKING_TEXT =
-    'For monthly parking and rental parking spaces, leave it to At Home. At Home, a real estate information website, makes it easy to find the perfect monthly parking or rental parking space to suit your needs.';
+    'For monthly parking and rental parking spaces, leave it to SeaHome. SeaHome, a real estate information website, makes it easy to find the perfect monthly parking or rental parking space to suit your needs.';

@@ -154,14 +154,19 @@ export const ParkingDiscovery: React.FC<ParkingDiscoveryProps> = ({ onNavigate }
 
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2.5 text-xs sm:text-sm font-medium">
                     {SEARCH_TOOLS_PARKING.map((item: NamedLink, idx: number) => (
-                        <button
+                        <a
                             key={idx}
-                            type="button"
-                            onClick={() => handleLinkClick(item.path)}
-                            className="text-blue-600 underline hover:text-blue-800 transition-colors hover:no-underline"
+                            href={item.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open(item.path, '_blank', 'noopener,noreferrer');
+                            }}
+                            className="text-blue-600 underline hover:text-blue-800 transition-colors font-semibold cursor-pointer"
                         >
                             {item.label}
-                        </button>
+                        </a>
                     ))}
                 </div>
             </section>
@@ -182,25 +187,35 @@ export const ParkingDiscovery: React.FC<ParkingDiscoveryProps> = ({ onNavigate }
                         </div>
                     </div>
 
-                    <button
-                        type="button"
-                        onClick={() => handleLinkClick('/tools/glossary')}
-                        className="shrink-0 text-xs font-semibold text-blue-600 underline hover:text-blue-800 transition-colors self-start sm:self-auto"
+                    <a
+                        href="/seahome-real-estates/glossary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            window.open('/seahome-real-estates/glossary', '_blank', 'noopener,noreferrer');
+                        }}
+                        className="shrink-0 text-xs font-semibold text-blue-600 underline hover:text-blue-800 transition-colors self-start sm:self-auto cursor-pointer"
                     >
                         Look up other real estate terms
-                    </button>
+                    </a>
                 </div>
 
                 <div className="mt-3.5 flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs sm:text-sm font-medium border-t border-gray-100 pt-3">
                     {PARKING_TERMS.map((item: NamedLink, idx: number) => (
-                        <button
+                        <a
                             key={idx}
-                            type="button"
-                            onClick={() => handleLinkClick(item.path)}
-                            className="text-blue-600 underline hover:text-blue-800 transition-colors hover:no-underline"
+                            href={item.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open(item.path, '_blank', 'noopener,noreferrer');
+                            }}
+                            className="text-blue-600 underline hover:text-blue-800 transition-colors font-semibold cursor-pointer"
                         >
                             {item.label}
-                        </button>
+                        </a>
                     ))}
                 </div>
             </section>

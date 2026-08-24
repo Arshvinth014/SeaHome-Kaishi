@@ -153,14 +153,19 @@ export const WarehouseDiscovery: React.FC<WarehouseDiscoveryProps> = ({ onNaviga
 
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2.5 text-xs sm:text-sm font-medium">
                     {SEARCH_TOOLS_WAREHOUSE.map((item: NamedLink, idx: number) => (
-                        <button
+                        <a
                             key={idx}
-                            type="button"
-                            onClick={() => handleLinkClick(item.path)}
-                            className="text-blue-600 underline hover:text-blue-800 transition-colors hover:no-underline"
+                            href={item.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open(item.path, '_blank', 'noopener,noreferrer');
+                            }}
+                            className="text-blue-600 underline hover:text-blue-800 transition-colors font-semibold cursor-pointer"
                         >
                             {item.label}
-                        </button>
+                        </a>
                     ))}
                 </div>
             </section>
