@@ -29,6 +29,7 @@ import SeahomeRentalWarehouseStationListPage from './pages/SeahomeRentalWarehous
 import SeahomeAffiliatedStorePage from './pages/SeahomeAffiliatedStorePage';
 import SeahomeRentalShopDistrictListPage from './pages/SeahomeRentalShopDistrictListPage';
 import SeahomeRentalShopDetailPage from './pages/SeahomeRentalShopDetailPage';
+import SeahomeRentalDetailPage from './pages/SeahomeRentalDetailPage';
 import RentalBuildingOtherPage from './pages/RentalBuildingOtherPage';
 import JapanHotelsPage from './pages/JapanHotelsPage';
 import JapanVillasPage from './pages/JapanVillasPage';
@@ -100,9 +101,9 @@ function App() {
 
         <Route path="seahome-real-estates" element={<SeahomeLayout />}>
           <Route index element={<SeahomeRealEstates />} />
-          <Route path="JapanHotelsPage" element={<JapanHotelsPage />}/>
-          <Route path="JapanVillasPage" element={<JapanVillasPage />}/>
-          <Route path="JapanRyokanOnsenPage" element={<JapanRyokanOnsenPage />}/>
+          <Route path="JapanHotelsPage" element={<JapanHotelsPage />} />
+          <Route path="JapanVillasPage" element={<JapanVillasPage />} />
+          <Route path="JapanRyokanOnsenPage" element={<JapanRyokanOnsenPage />} />
           <Route path="rental" element={<SeahomeRentalPage />} />
           <Route path="rental-shop" element={<RentalShopPage />} />
           <Route path="rental-shop/category/:categorySlug" element={<RentalShopCategoryPage />} />
@@ -144,6 +145,8 @@ function App() {
           <Route path="rent_store/hankagai/:districtSlug/list" element={<SeahomeRentalShopDistrictListPage />} />
           <Route path="rental-shop/detail/:storeId" element={<SeahomeRentalShopDetailPage />} />
           <Route path="rent_store/:storeId" element={<SeahomeRentalShopDetailPage />} />
+          <Route path="rental/detail/:listingId" element={<SeahomeRentalDetailPage />} />
+          <Route path="chintai/:listingId" element={<SeahomeRentalDetailPage />} />
           <Route path="rental-building-other" element={<RentalBuildingOtherPage />} />
           <Route
             path="rental/search-by-line-station/:locationSlug"

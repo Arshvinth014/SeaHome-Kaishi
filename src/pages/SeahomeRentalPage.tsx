@@ -395,8 +395,8 @@ const SeahomeRentalPage: React.FC = () => {
                     }
                   }}
                   className={`flex flex-col items-center justify-center p-2.5 sm:p-3 rounded-xl border text-center transition-all duration-200 cursor-pointer ${isActive
-                      ? 'border-sky-500 bg-white text-sky-900 shadow-md shadow-sky-900/10 font-bold ring-2 ring-sky-500/20'
-                      : 'border-sky-100 bg-white/70 text-slate-700 hover:border-sky-300 hover:bg-white hover:text-sky-900'
+                    ? 'border-sky-500 bg-white text-sky-900 shadow-md shadow-sky-900/10 font-bold ring-2 ring-sky-500/20'
+                    : 'border-sky-100 bg-white/70 text-slate-700 hover:border-sky-300 hover:bg-white hover:text-sky-900'
                     }`}
                 >
                   <div className="flex items-center gap-1.5">
@@ -608,7 +608,10 @@ const SeahomeRentalPage: React.FC = () => {
             {/* NEW LISTINGS CAROUSEL SHOWCASE */}
             <SeahomeRentalNewListingsCarousel
               className="mt-2"
-              onListingClick={(card) => openListings(`/properties?id=${card.id}`)}
+              onListingClick={(card) => {
+                const url = `/seahome-real-estates/rental/detail/${card.id}`;
+                window.open(url, '_blank', 'noopener,noreferrer');
+              }}
               onCategoryClick={(cat) => openListings(`/properties?category=${encodeURIComponent(cat)}`)}
             />
           </main>
