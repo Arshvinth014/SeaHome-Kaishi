@@ -84,7 +84,9 @@ const SeahomeRentalCitySearchModal: React.FC<Props> = ({
         ? `${basePath}/${prefectureSlug || 'iwate'}/city/${city.slug}`
         : `${basePath}/${prefectureSlug || 'iwate'}/city`;
       navigate(cityPath);
-    } else if (id === 'station' || id === 'route') {
+    } else if (id === 'route') {
+      navigate(`${basePath}/${prefectureSlug || 'nagano'}/route-map`);
+    } else if (id === 'station') {
       navigate(`/seahome-real-estates/rental/search-by-line-station/${prefectureSlug || 'niigata'}`);
     } else if (id === 'map') {
       navigate(`/seahome-real-estates/rental/search-by-map/${prefectureSlug || 'niigata'}`);

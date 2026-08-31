@@ -15,6 +15,7 @@ import RentalShopCategoryPage from './pages/RentalShopCategoryPage';
 import RentalOfficePage from './pages/RentalOfficePage';
 import RentalOfficeCategoryPage from './pages/RentalOfficeCategoryPage';
 import PrefectureCityPage from './pages/PrefectureCityPage';
+import PrefectureRouteMapPage from './pages/PrefectureRouteMapPage';
 import RentalLandPage from './pages/RentalLandPage';
 import SeahomeRentalLandDetailPage from './pages/SeahomeRentalLandDetailPage';
 import SeahomeUsefulToolsPage from './pages/SeahomeUsefulToolsPage';
@@ -101,6 +102,8 @@ function App() {
           <Route path="rental-shop/category/:categorySlug" element={<RentalShopCategoryPage />} />
           <Route path="rental-shop/:prefectureSlug/city" element={<PrefectureCityPage />} />
           <Route path="rental-shop/:prefectureSlug/city/:citySlug" element={<PrefectureCityPage />} />
+          <Route path="rental-shop/:prefectureSlug/route-map" element={<PrefectureRouteMapPage />} />
+          <Route path="rental-shop/route-map" element={<PrefectureRouteMapPage />} />
           <Route path="rental-shop/:categorySlug" element={<RentalShopCategoryPage />} />
           <Route path="rental-office" element={<RentalOfficePage />} />
           <Route path="rental-office/size/:sizeId" element={<RentalOfficeCategoryPage />} />
@@ -108,7 +111,11 @@ function App() {
           <Route path="rental-office/category/:categorySlug" element={<RentalOfficeCategoryPage />} />
           <Route path="rental-office/:prefectureSlug/city" element={<PrefectureCityPage />} />
           <Route path="rental-office/:prefectureSlug/city/:citySlug" element={<PrefectureCityPage />} />
+          <Route path="rental-office/:prefectureSlug/route-map" element={<PrefectureRouteMapPage />} />
+          <Route path="rental-office/route-map" element={<PrefectureRouteMapPage />} />
           <Route path="rental-office/:sizeId" element={<RentalOfficeCategoryPage />} />
+          <Route path="rental/search-by-route-map" element={<PrefectureRouteMapPage />} />
+          <Route path="rental/search-by-route-map/:prefectureSlug" element={<PrefectureRouteMapPage />} />
           <Route path="rental-land" element={<RentalLandPage />} />
           <Route path="rental-land/detail/:landId" element={<SeahomeRentalLandDetailPage />} />
           <Route path="rental-land/:landId" element={<SeahomeRentalLandDetailPage />} />
