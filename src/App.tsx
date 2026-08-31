@@ -28,6 +28,7 @@ import SeahomeRentalWarehouseCityListPage from './pages/SeahomeRentalWarehouseCi
 import SeahomeRentalWarehouseStationListPage from './pages/SeahomeRentalWarehouseStationListPage';
 import SeahomeAffiliatedStorePage from './pages/SeahomeAffiliatedStorePage';
 import SeahomeRentalShopDistrictListPage from './pages/SeahomeRentalShopDistrictListPage';
+import SeahomeRentalShopDetailPage from './pages/SeahomeRentalShopDetailPage';
 import RentalBuildingOtherPage from './pages/RentalBuildingOtherPage';
 import JapanHotelsPage from './pages/JapanHotelsPage';
 import JapanVillasPage from './pages/JapanVillasPage';
@@ -141,6 +142,8 @@ function App() {
           <Route path="affiliated-stores" element={<SeahomeAffiliatedStorePage />} />
           <Route path="rental-shop/shopping-district/:districtSlug/list" element={<SeahomeRentalShopDistrictListPage />} />
           <Route path="rent_store/hankagai/:districtSlug/list" element={<SeahomeRentalShopDistrictListPage />} />
+          <Route path="rental-shop/detail/:storeId" element={<SeahomeRentalShopDetailPage />} />
+          <Route path="rent_store/:storeId" element={<SeahomeRentalShopDetailPage />} />
           <Route path="rental-building-other" element={<RentalBuildingOtherPage />} />
           <Route
             path="rental/search-by-line-station/:locationSlug"
