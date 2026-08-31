@@ -13,7 +13,6 @@ import {
   Share2,
   ShieldCheck,
   ShieldAlert,
-  Zap,
 } from 'lucide-react';
 import { HUB_CONTAINER } from '../components/seahome/seahomeHubLayout';
 import {
@@ -86,11 +85,10 @@ export const SeahomeRentalWarehouseDetailPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setFavorite((v) => !v)}
-                className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-all cursor-pointer ${
-                  favorite
+                className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-all cursor-pointer ${favorite
                     ? 'border-red-400 bg-red-500 text-white shadow-sm'
                     : 'border-white/30 bg-white/10 text-white hover:bg-white/20'
-                }`}
+                  }`}
               >
                 <Heart className={`h-4 w-4 ${favorite ? 'fill-current' : ''}`} />
                 {favorite ? 'Saved' : 'Save Property'}
@@ -202,11 +200,10 @@ export const SeahomeRentalWarehouseDetailPage: React.FC = () => {
                     key={idx}
                     type="button"
                     onClick={() => setActiveImageIndex(idx)}
-                    className={`relative overflow-hidden rounded-lg border-2 transition-all cursor-pointer ${
-                      idx === activeImageIndex
+                    className={`relative overflow-hidden rounded-lg border-2 transition-all cursor-pointer ${idx === activeImageIndex
                         ? 'border-sky-600 ring-2 ring-sky-300 scale-105 shadow-sm'
                         : 'border-transparent opacity-80 hover:opacity-100'
-                    }`}
+                      }`}
                   >
                     <img src={img.url} alt={img.caption} className="aspect-[4/3] w-full object-cover" />
                   </button>

@@ -100,45 +100,190 @@ export const WHAT_S_NEW_WAREHOUSE_LISTINGS: WarehouseListingItem[] = [
     },
 ];
 
+export interface WarehouseCityListingCard {
+    id: string;
+    listingCode: string;
+    title: string;
+    propertyName: string;
+    rentYen: number;
+    rentDisplay: string;
+    commonFeeDisplay: string;
+    depositDisplay: string;
+    keyMoneyDisplay: string;
+    usableAreaM2: string;
+    usableAreaTsubo: string;
+    ceilingHeight: string;
+    floorLoadCapacity: string;
+    structure: string;
+    shutterDimensions: string;
+    address: string;
+    accessStation: string;
+    imageUrl: string;
+    tags: string[];
+    isNewListing?: boolean;
+}
+
+export function getWarehouseCityListData(citySlug: string, prefectureSlug: string) {
+    const capitalizedPref = prefectureSlug ? prefectureSlug.charAt(0).toUpperCase() + prefectureSlug.slice(1) : 'Saitama';
+    let cityName = 'Kawaguchi City';
+    if (citySlug.includes('ota')) cityName = 'Ota Ward';
+    else if (citySlug.includes('adachi')) cityName = 'Adachi Ward';
+    else if (citySlug.includes('edogawa')) cityName = 'Edogawa Ward';
+    else if (citySlug.includes('gifu')) cityName = 'Gifu City';
+    else if (citySlug.includes('osaka-minato')) cityName = 'Minato Ward, Osaka City';
+    else if (citySlug.includes('nishiyodogawa')) cityName = 'Nishiyodogawa Ward, Osaka City';
+    else if (citySlug.includes('joto')) cityName = 'Joto Ward, Osaka City';
+    else if (citySlug.includes('yodogawa')) cityName = 'Yodogawa Ward, Osaka City';
+    else if (citySlug.includes('hirano')) cityName = 'Hirano Ward, Osaka City';
+    else if (citySlug.includes('toyonaka')) cityName = 'Toyonaka City';
+    else if (citySlug.includes('yao')) cityName = 'Yao City';
+    else if (citySlug.includes('settsu')) cityName = 'Settsu City';
+    else if (citySlug.includes('higashi-osaka')) cityName = 'Higashi-Osaka City';
+    else if (citySlug.includes('amagasaki')) cityName = 'Amagasaki City';
+
+    const cards: WarehouseCityListingCard[] = [
+        {
+            id: 'w1',
+            listingCode: 'WH-KWG-6983611859',
+            title: `${cityName} Heavy Logistics Center & Multi-Bay Rental Warehouse`,
+            propertyName: `${cityName} Industrial Park Warehouse Bay A`,
+            rentYen: 280000,
+            rentDisplay: '280,000 yen',
+            commonFeeDisplay: '15,000 yen / mo',
+            depositDisplay: '2 months',
+            keyMoneyDisplay: '1 month',
+            usableAreaM2: '145.50 m²',
+            usableAreaTsubo: '44.01 tsubo',
+            ceilingHeight: '6.0m Clearance',
+            floorLoadCapacity: '2.5 tons / m²',
+            structure: 'Steel Frame 1st Floor (Drive-in)',
+            shutterDimensions: 'W 4.8m x H 4.5m Electric Gate',
+            address: `Arai, ${cityName}, ${capitalizedPref} Prefecture`,
+            accessStation: '12-min walk from Kawaguchi-Motogo Station (Saitama Railway Line)',
+            imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+            tags: ['10-Ton Truck Loading Ramp', '3-Phase 200V Power', 'Office Mezzanine', 'Electric Shutter'],
+            isNewListing: true,
+        },
+        {
+            id: 'w2',
+            listingCode: 'WH-KWG-7482910482',
+            title: `${cityName} High Ceiling Cargo Storage & Distribution Yard`,
+            propertyName: `${cityName} Freight Logistics Center`,
+            rentYen: 450000,
+            rentDisplay: '450,000 yen',
+            commonFeeDisplay: '20,000 yen / mo',
+            depositDisplay: '3 months',
+            keyMoneyDisplay: '1 month',
+            usableAreaM2: '298.80 m²',
+            usableAreaTsubo: '90.38 tsubo',
+            ceilingHeight: '6.5m Clearance',
+            floorLoadCapacity: '3.0 tons / m²',
+            structure: 'Reinforced Concrete & Steel',
+            shutterDimensions: 'W 5.2m x H 4.8m Double Shutter',
+            address: `Ryoke, ${cityName}, ${capitalizedPref} Prefecture`,
+            accessStation: '8-min drive to Interstate Expressway Interchange',
+            imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
+            tags: ['Container Truck Dock', 'Overhead Crane Hoist', '24/7 Access CCTV', 'Sprinklers'],
+            isNewListing: true,
+        },
+        {
+            id: 'w3',
+            listingCode: 'WH-KWG-8193029104',
+            title: `${cityName} Compact Commercial Storage & Equipment Facility`,
+            propertyName: `${cityName} Trade & Distribution Unit B`,
+            rentYen: 165000,
+            rentDisplay: '165,000 yen',
+            commonFeeDisplay: '10,000 yen / mo',
+            depositDisplay: '2 months',
+            keyMoneyDisplay: 'Zero Key Money',
+            usableAreaM2: '86.20 m²',
+            usableAreaTsubo: '26.07 tsubo',
+            ceilingHeight: '5.2m Clearance',
+            floorLoadCapacity: '1.8 tons / m²',
+            structure: 'Steel Frame Ground Floor',
+            shutterDimensions: 'W 4.2m x H 4.0m Roll-up Shutter',
+            address: `Naka-Aoki, ${cityName}, ${capitalizedPref} Prefecture`,
+            accessStation: '15-min walk from Kawaguchi Station (JR Keihin-Tohoku Line)',
+            imageUrl: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80',
+            tags: ['Zero Key Money', 'Direct Truck Access', '24/7 Security Access', 'LED Bay Lighting'],
+        },
+        {
+            id: 'w4',
+            listingCode: 'WH-KWG-9038201948',
+            title: `${cityName} Multi-Story Logistics Facility with Freight Elevator`,
+            propertyName: `${cityName} Cargo Tower & Storage Hub`,
+            rentYen: 890000,
+            rentDisplay: '890,000 yen',
+            commonFeeDisplay: '40,000 yen / mo',
+            depositDisplay: '3 months',
+            keyMoneyDisplay: '1 month',
+            usableAreaM2: '580.40 m²',
+            usableAreaTsubo: '175.57 tsubo',
+            ceilingHeight: '5.8m Clearance per floor',
+            floorLoadCapacity: '2.0 tons / m²',
+            structure: 'Steel Frame 2-Story Facility',
+            shutterDimensions: 'W 5.0m x H 4.5m Shutter & Dock',
+            address: `Hasuda, ${cityName}, ${capitalizedPref} Prefecture`,
+            accessStation: '10-min drive from Tokyo Ring Road Interchange',
+            imageUrl: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80',
+            tags: ['Freight Elevator (3.5t)', '2-Story Office Suite', 'Reserved Truck Bays', 'Sprinklers'],
+        },
+    ];
+
+    return {
+        prefectureSlug,
+        prefectureName: capitalizedPref,
+        citySlug,
+        cityName,
+        totalCount: cards.length,
+        cards,
+    };
+}
+
 export function getWarehouseDetail(id: string): WarehouseDetailSpec {
-    const found = WHAT_S_NEW_WAREHOUSE_LISTINGS.find((w) => w.id === id);
-    const title = found?.title || 'Prime Logistics Warehouse & Commercial Storage Center';
-    const rentDisplay = found?.price || '165,000 yen';
-    const usableAreaM2 = found?.size || '36.34 m²';
+    const foundWhatNew = WHAT_S_NEW_WAREHOUSE_LISTINGS.find((w) => w.id === id);
+    const sampleCity = getWarehouseCityListData('kawaguchi-city', 'saitama');
+    const foundCityCard = sampleCity.cards.find((c) => c.id === id);
+
+    const title = foundWhatNew?.title || foundCityCard?.title || 'Kawaguchi Motogo Heavy Logistics Center & Commercial Warehouse';
+    const rentDisplay = foundWhatNew?.price || foundCityCard?.rentDisplay || '280,000 yen';
+    const usableAreaM2 = foundWhatNew?.size || foundCityCard?.usableAreaM2 || '145.50 m²';
+    const address = foundCityCard?.address || 'Arai, Kawaguchi City, Saitama Prefecture';
+    const stationAccess = foundCityCard?.accessStation || '12-min walk from Kawaguchi-Motogo Station (Saitama Railway Line)';
 
     return {
         id: id || 'w1',
-        listingCode: `WH-${id ? id.toUpperCase() : 'W1'}-6983611859`,
+        listingCode: `WH-${id ? id.toUpperCase() : 'W1'}-6987482007`,
         label: 'Rental Warehouse & Logistics Facility',
         title,
-        propertyName: found?.title ? found.title.split('—')[0].trim() : 'SeaHome Premium Cargo Facility',
-        rentYen: 165000,
+        propertyName: title.split('—')[0].trim(),
+        rentYen: foundCityCard?.rentYen || 280000,
         rentDisplay,
-        commonFeeDisplay: '12,000 yen / month',
-        depositDisplay: '2 months rent',
-        keyMoneyDisplay: '1 month rent',
+        commonFeeDisplay: foundCityCard?.commonFeeDisplay || '15,000 yen / month',
+        depositDisplay: foundCityCard?.depositDisplay || '2 months rent',
+        keyMoneyDisplay: foundCityCard?.keyMoneyDisplay || '1 month rent',
         guaranteeFeeDisplay: '50% of 1st month rent',
         renewalFeeDisplay: '1 month new rent',
         usableAreaM2,
-        usableAreaTsubo: '10.99 tsubo',
-        ceilingHeight: '5.8 meters clearance',
-        floorLoadCapacity: '2.0 tons / m²',
-        structure: 'Steel Frame (S Structure) Fire-Resistant',
-        yearBuilt: 'Built in 2019 (Modern Reinforced Construction)',
-        floorLevel: '1st Ground Floor (Direct Drive-in Dock)',
-        shutterDimensions: 'W 4.5m x H 4.2m Electric Roll-up Shutter',
+        usableAreaTsubo: foundCityCard?.usableAreaTsubo || '44.01 tsubo',
+        ceilingHeight: foundCityCard?.ceilingHeight || '6.0 meters clearance',
+        floorLoadCapacity: foundCityCard?.floorLoadCapacity || '2.5 tons / m²',
+        structure: foundCityCard?.structure || 'Steel Frame (S Structure) 1st Floor Drive-In',
+        yearBuilt: 'Built in 2020 (Modern Reinforced Construction)',
+        floorLevel: '1st Ground Floor (Direct Shutter Drive-In Dock)',
+        shutterDimensions: foundCityCard?.shutterDimensions || 'W 4.8m x H 4.5m Electric Roll-up Shutter',
         truckAccess: 'Large 10-Ton Container Truck Loading Dock & Ramp',
         powerSupply: '3-Phase 200V / High Voltage Capacity Power',
-        address: 'Nishi-Shinjuku, Shinjuku Ward, Tokyo 160-0023',
-        stationAccess: '1-min walk from Nishi-Shinjuku Station (Tokyo Metro Marunouchi Line)',
+        address,
+        stationAccess,
         currentStatus: 'Vacant & Available Immediately',
         handoverDate: 'Immediate Handover Available',
         description:
-            'High-grade commercial rental warehouse equipped with electric roll-up shutter doors, 5.8m clear ceiling height, and 2.0t/m² heavy floor load capacity. Features 3-Phase 200V industrial power, loading dock for 10-ton container trucks, LED lighting, office mezzanine space, and 24/7 security access control.',
-        features: [
+            'High-grade commercial rental warehouse equipped with electric roll-up shutter doors, 6.0m clear ceiling height, and 2.5t/m² heavy floor load capacity. Features 3-Phase 200V industrial power, loading dock for 10-ton container trucks, LED lighting, office mezzanine space, and 24/7 security access control.',
+        features: foundCityCard?.tags || [
             'Overhead Electric Roll-Up Shutter Door',
-            'Heavy 2.0t/m² Floor Load Capacity',
-            '5.8m High Ceiling Clearance',
+            'Heavy 2.5t/m² Floor Load Capacity',
+            '6.0m High Ceiling Clearance',
             '3-Phase 200V High Voltage Power Supply',
             '10-Ton Container Truck Loading Ramp',
             'Integrated Office Mezzanine Space',
@@ -148,20 +293,20 @@ export function getWarehouseDetail(id: string): WarehouseDetailSpec {
         ],
         galleryImages: [
             {
-                url: found?.imageUrl || 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80',
-                caption: 'Warehouse Interior Storage Bay with High Ceiling Clearance',
+                url: foundWhatNew?.imageUrl || foundCityCard?.imageUrl || 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80',
+                caption: 'Warehouse Interior Storage Bay with 6.0m Clearance',
             },
             {
                 url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80',
-                caption: 'Exterior Loading Dock & Heavy Truck Access Yard',
+                caption: 'Exterior Loading Dock & Heavy Truck Access Ramp',
             },
             {
                 url: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80',
-                caption: 'Electric Roll-Up Shutter & Container Ramp Access',
+                caption: 'Overhead Electric Shutter Gate & Drive-in Access',
             },
             {
                 url: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1000&q=80',
-                caption: 'Office Mezzanine & Staff Restroom Area',
+                caption: 'Office Mezzanine & Staff Restroom Facility',
             },
         ],
         listingAgency: {
@@ -188,21 +333,21 @@ export const SEARCH_TOOLS_WAREHOUSE: NamedLink[] = [
 ];
 
 export const NOTABLE_CITIES_WAREHOUSE: NamedLink[] = [
-    { label: 'Kawaguchi City', path: '/properties?city=kawaguchi' },
-    { label: 'Ota Ward', path: '/properties?city=ota' },
-    { label: 'Adachi Ward', path: '/properties?city=adachi' },
-    { label: 'Edogawa Ward', path: '/properties?city=edogawa' },
-    { label: 'Gifu City', path: '/properties?city=gifu' },
-    { label: 'Minato Ward, Osaka City', path: '/properties?city=osaka-minato' },
-    { label: 'Nishiyodogawa Ward, Osaka City', path: '/properties?city=osaka-nishiyodogawa' },
-    { label: 'Joto Ward, Osaka City', path: '/properties?city=osaka-joto' },
-    { label: 'Yodogawa Ward, Osaka City', path: '/properties?city=osaka-yodogawa' },
-    { label: 'Hirano Ward, Osaka City', path: '/properties?city=osaka-hirano' },
-    { label: 'Toyonaka City', path: '/properties?city=toyonaka' },
-    { label: 'Yao City', path: '/properties?city=yao' },
-    { label: 'Settsu City', path: '/properties?city=settsu' },
-    { label: 'Higashi-Osaka City', path: '/properties?city=higashi-osaka' },
-    { label: 'Amagasaki City', path: '/properties?city=amagasaki' },
+    { label: 'Kawaguchi City', path: '/seahome-real-estates/rental-warehouse/saitama/kawaguchi-city/list' },
+    { label: 'Ota Ward', path: '/seahome-real-estates/rental-warehouse/tokyo/ota-ward/list' },
+    { label: 'Adachi Ward', path: '/seahome-real-estates/rental-warehouse/tokyo/adachi-ward/list' },
+    { label: 'Edogawa Ward', path: '/seahome-real-estates/rental-warehouse/tokyo/edogawa-ward/list' },
+    { label: 'Gifu City', path: '/seahome-real-estates/rental-warehouse/gifu/gifu-city/list' },
+    { label: 'Minato Ward, Osaka City', path: '/seahome-real-estates/rental-warehouse/osaka/osaka-minato/list' },
+    { label: 'Nishiyodogawa Ward, Osaka City', path: '/seahome-real-estates/rental-warehouse/osaka/osaka-nishiyodogawa/list' },
+    { label: 'Joto Ward, Osaka City', path: '/seahome-real-estates/rental-warehouse/osaka/osaka-joto/list' },
+    { label: 'Yodogawa Ward, Osaka City', path: '/seahome-real-estates/rental-warehouse/osaka/osaka-yodogawa/list' },
+    { label: 'Hirano Ward, Osaka City', path: '/seahome-real-estates/rental-warehouse/osaka/osaka-hirano/list' },
+    { label: 'Toyonaka City', path: '/seahome-real-estates/rental-warehouse/osaka/toyonaka-city/list' },
+    { label: 'Yao City', path: '/seahome-real-estates/rental-warehouse/osaka/yao-city/list' },
+    { label: 'Settsu City', path: '/seahome-real-estates/rental-warehouse/osaka/settsu-city/list' },
+    { label: 'Higashi-Osaka City', path: '/seahome-real-estates/rental-warehouse/osaka/higashi-osaka/list' },
+    { label: 'Amagasaki City', path: '/seahome-real-estates/rental-warehouse/hyogo/amagasaki-city/list' },
 ];
 
 export const STATIONS_TO_WATCH_WAREHOUSE: NamedLink[] = [
