@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Search, Warehouse, Building2, MapPin, Train, Wrench } from 'lucide-react';
 import {
     WHAT_S_NEW_WAREHOUSE_LISTINGS,
@@ -17,13 +18,14 @@ interface WarehouseDiscoveryProps {
 }
 
 export const WarehouseDiscovery: React.FC<WarehouseDiscoveryProps> = ({ onNavigate }) => {
+    const navigate = useNavigate();
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     const handleLinkClick = (path: string) => {
         if (onNavigate) {
             onNavigate(path);
         } else {
-            window.location.href = path;
+            navigate(path);
         }
     };
 
