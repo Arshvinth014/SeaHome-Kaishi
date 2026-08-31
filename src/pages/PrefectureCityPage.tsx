@@ -79,7 +79,7 @@ export const PrefectureCityPage: React.FC = () => {
       </div>
 
       <div className={`${HUB_CONTAINER} pt-6 pb-12 space-y-6`}>
-        {/* 2. HERO HEADER BLOCK (Matching athome rent_office/iwate/city flow) */}
+        {/* 2. HERO HEADER BLOCK */}
         <div className="rounded-2xl border-t-4 border-t-sky-600 border-x border-b border-sky-100 bg-white p-6 sm:p-8 shadow-md space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sky-100 pb-5">
             <div>
@@ -109,7 +109,7 @@ export const PrefectureCityPage: React.FC = () => {
             </div>
           </div>
 
-          {/* 3. ATHOME MATCHING SEARCH METHOD NAVIGATION TABS */}
+          {/* 3. SEARCH METHOD NAVIGATION TABS */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-sky-50/60 p-2 rounded-xl border border-sky-100">
             <button
               type="button"
@@ -145,7 +145,7 @@ export const PrefectureCityPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 4. CITY & DISTRICT CHECKBOX SELECTION GRID (athome rent_office/iwate/city flow) */}
+        {/* 4. CITY & DISTRICT CHECKBOX SELECTION GRID*/}
         <div className="rounded-2xl border border-sky-100 bg-white p-6 shadow-sm space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-sky-100 pb-4">
             <div className="flex items-center gap-2">

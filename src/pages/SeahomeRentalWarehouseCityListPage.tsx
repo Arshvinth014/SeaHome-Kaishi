@@ -165,7 +165,7 @@ export const SeahomeRentalWarehouseCityListPage: React.FC = () => {
         </div>
       </nav>
 
-      {/* 2. HERO HEADER BLOCK (athome.co.jp/rent_souko/saitama/kawaguchi-city/list/ layout) */}
+      {/* 2. HERO HEADER BLOCK */}
       <div className={`${HUB_CONTAINER} pt-6 pb-12 space-y-6`}>
         <header className="rounded-2xl border-t-4 border-t-sky-600 border-x border-b border-sky-100 bg-white p-6 sm:p-8 shadow-md space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sky-100 pb-5">
@@ -236,7 +236,7 @@ export const SeahomeRentalWarehouseCityListPage: React.FC = () => {
 
         {/* 3. MAIN THREE-COLUMN LAYOUT (Left Filter Panel + Main Listings + Sidebar) */}
         <div className="grid gap-6 lg:grid-cols-[17.5rem_minmax(0,1fr)]">
-          {/* LEFT REFINE SEARCH FILTER PANEL (athome.co.jp/rent_souko/ list layout) */}
+          {/* LEFT REFINE SEARCH FILTER PANEL*/}
           <aside
             className={`space-y-4 shrink-0 ${mobileFilterOpen ? 'block' : 'hidden lg:block'
               }`}

@@ -169,7 +169,7 @@ export const SeahomeRentalWarehouseStationListPage: React.FC = () => {
         </div>
       </nav>
 
-      {/* 2. HERO HEADER BLOCK (athome.co.jp/rent_souko/osaka/hirano-st/list/ layout) */}
+      {/* 2. HERO HEADER BLOCK */}
       <div className={`${HUB_CONTAINER} pt-6 pb-12 space-y-6`}>
         <header className="rounded-2xl border-t-4 border-t-sky-600 border-x border-b border-sky-100 bg-white p-6 sm:p-8 shadow-md space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sky-100 pb-5">
@@ -215,8 +215,8 @@ export const SeahomeRentalWarehouseStationListPage: React.FC = () => {
                   type="button"
                   onClick={() => setActiveFilterTab(tab.id as typeof activeFilterTab)}
                   className={`px-3.5 py-2 rounded-xl text-xs font-extrabold border transition-all duration-200 cursor-pointer ${isActive
-                      ? 'border-sky-500 bg-sky-600 text-white shadow-md shadow-sky-600/20'
-                      : 'border-sky-100 bg-slate-50/80 text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-900'
+                    ? 'border-sky-500 bg-sky-600 text-white shadow-md shadow-sky-600/20'
+                    : 'border-sky-100 bg-slate-50/80 text-slate-700 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-900'
                     }`}
                 >
                   {tab.label}

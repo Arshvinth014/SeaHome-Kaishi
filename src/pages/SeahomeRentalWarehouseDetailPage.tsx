@@ -86,8 +86,8 @@ export const SeahomeRentalWarehouseDetailPage: React.FC = () => {
                 type="button"
                 onClick={() => setFavorite((v) => !v)}
                 className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-all cursor-pointer ${favorite
-                    ? 'border-red-400 bg-red-500 text-white shadow-sm'
-                    : 'border-white/30 bg-white/10 text-white hover:bg-white/20'
+                  ? 'border-red-400 bg-red-500 text-white shadow-sm'
+                  : 'border-white/30 bg-white/10 text-white hover:bg-white/20'
                   }`}
               >
                 <Heart className={`h-4 w-4 ${favorite ? 'fill-current' : ''}`} />
@@ -201,8 +201,8 @@ export const SeahomeRentalWarehouseDetailPage: React.FC = () => {
                     type="button"
                     onClick={() => setActiveImageIndex(idx)}
                     className={`relative overflow-hidden rounded-lg border-2 transition-all cursor-pointer ${idx === activeImageIndex
-                        ? 'border-sky-600 ring-2 ring-sky-300 scale-105 shadow-sm'
-                        : 'border-transparent opacity-80 hover:opacity-100'
+                      ? 'border-sky-600 ring-2 ring-sky-300 scale-105 shadow-sm'
+                      : 'border-transparent opacity-80 hover:opacity-100'
                       }`}
                   >
                     <img src={img.url} alt={img.caption} className="aspect-[4/3] w-full object-cover" />
@@ -262,7 +262,7 @@ export const SeahomeRentalWarehouseDetailPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Detailed Warehouse Specifications Table (athome rent_souko standard table) */}
+        {/* Detailed Warehouse Specifications Table*/}
         <section className="rounded-2xl border border-sky-100 bg-white p-4 shadow-sm sm:p-6">
           <h2 className="mb-4 text-lg font-extrabold text-sky-950 sm:text-xl flex items-center gap-2">
             <FileText className="h-5 w-5 text-sky-600" />

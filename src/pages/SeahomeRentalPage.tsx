@@ -340,7 +340,7 @@ const SeahomeRentalPage: React.FC = () => {
       </div>
 
       <div className={`${HUB_CONTAINER} pt-6 pb-12 space-y-6`}>
-        {/* 2. HERO HEADER BLOCK (athome.co.jp/chintai/ layout) */}
+        {/* 2. HERO HEADER BLOCK */}
         <div className="rounded-2xl border-t-4 border-t-sky-600 border-x border-b border-sky-100 bg-white p-6 sm:p-8 shadow-md space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sky-100 pb-5">
             <div>
@@ -369,7 +369,7 @@ const SeahomeRentalPage: React.FC = () => {
             </div>
           </div>
 
-          {/* 3. ATHOME ALIGNED 5 SEARCH NAVIGATION TABS */}
+          {/* 3. SEARCH NAVIGATION TABS */}
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 bg-sky-50/60 p-2 rounded-xl border border-sky-100">
             {[
               { id: 'area', label: 'By Area / City', sub: 'Pick Region', icon: MapPin },
@@ -394,11 +394,10 @@ const SeahomeRentalPage: React.FC = () => {
                       navigate('/seahome-real-estates/rental/search-by-map/niigata');
                     }
                   }}
-                  className={`flex flex-col items-center justify-center p-2.5 sm:p-3 rounded-xl border text-center transition-all duration-200 cursor-pointer ${
-                    isActive
+                  className={`flex flex-col items-center justify-center p-2.5 sm:p-3 rounded-xl border text-center transition-all duration-200 cursor-pointer ${isActive
                       ? 'border-sky-500 bg-white text-sky-900 shadow-md shadow-sky-900/10 font-bold ring-2 ring-sky-500/20'
                       : 'border-sky-100 bg-white/70 text-slate-700 hover:border-sky-300 hover:bg-white hover:text-sky-900'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-1.5">
                     <Icon className={`w-4 h-4 ${isActive ? 'text-sky-600' : 'text-sky-500'}`} />
@@ -500,7 +499,7 @@ const SeahomeRentalPage: React.FC = () => {
               )}
             </div>
 
-            {/* SPECIAL FEATURES CARDS GRID (athome chintai special feature showcase) */}
+            {/* SPECIAL FEATURES CARDS GRID */}
             <div className="rounded-2xl border border-sky-100 bg-white p-5 sm:p-6 shadow-sm space-y-4">
               <div className="flex items-center justify-between border-b border-sky-100 pb-3">
                 <div className="flex items-center gap-2">

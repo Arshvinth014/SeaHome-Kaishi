@@ -95,7 +95,7 @@ export const PrefectureRouteMapPage: React.FC = () => {
       </div>
 
       <div className={`${HUB_CONTAINER} pt-6 pb-12 space-y-6`}>
-        {/* 2. HERO HEADER BLOCK (Matching athome chintai/nagano/rosen_map flow) */}
+        {/* 2. HERO HEADER BLOCK */}
         <div className="rounded-2xl border-t-4 border-t-sky-600 border-x border-b border-sky-100 bg-white p-6 sm:p-8 shadow-md space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-sky-100 pb-5">
             <div>
@@ -125,7 +125,7 @@ export const PrefectureRouteMapPage: React.FC = () => {
             </div>
           </div>
 
-          {/* 3. ATHOME MATCHING SEARCH METHOD NAVIGATION TABS */}
+          {/* 3. SEARCH METHOD NAVIGATION TABS */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-sky-50/60 p-2 rounded-xl border border-sky-100">
             <button
               type="button"
@@ -185,8 +185,8 @@ export const PrefectureRouteMapPage: React.FC = () => {
               type="button"
               onClick={() => setActiveLineId(null)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${activeLineId === null
-                  ? 'bg-sky-600 text-white shadow-md shadow-sky-600/20'
-                  : 'bg-slate-100 text-slate-700 hover:bg-sky-50 hover:text-sky-900'
+                ? 'bg-sky-600 text-white shadow-md shadow-sky-600/20'
+                : 'bg-slate-100 text-slate-700 hover:bg-sky-50 hover:text-sky-900'
                 }`}
             >
               All Railway Lines ({routeData.lines.length})
@@ -200,8 +200,8 @@ export const PrefectureRouteMapPage: React.FC = () => {
                   type="button"
                   onClick={() => setActiveLineId(isActive ? null : line.id)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer flex items-center gap-2 ${isActive
-                      ? 'bg-sky-900 text-white border-sky-700 shadow-md'
-                      : 'bg-white text-slate-800 border-slate-200 hover:border-sky-300 hover:bg-sky-50'
+                    ? 'bg-sky-900 text-white border-sky-700 shadow-md'
+                    : 'bg-white text-slate-800 border-slate-200 hover:border-sky-300 hover:bg-sky-50'
                     }`}
                 >
                   <span
@@ -288,7 +288,7 @@ export const PrefectureRouteMapPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 5. RAILWAY LINES CHECKLIST (athome rosen_map flow) */}
+        {/* 5. RAILWAY LINES CHECKLIST*/}
         <div className="rounded-2xl border border-sky-100 bg-white p-6 shadow-sm space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-sky-100 pb-4">
             <div className="flex items-center gap-2">
@@ -325,8 +325,8 @@ export const PrefectureRouteMapPage: React.FC = () => {
                   key={line.id}
                   onClick={() => toggleLineId(line.id)}
                   className={`p-3.5 rounded-xl border transition-all cursor-pointer flex items-center justify-between group ${isChecked
-                      ? 'border-sky-500 bg-sky-50/80 text-sky-950 font-bold shadow-xs ring-1 ring-sky-400'
-                      : 'border-slate-200 bg-white hover:border-sky-300 hover:bg-slate-50'
+                    ? 'border-sky-500 bg-sky-50/80 text-sky-950 font-bold shadow-xs ring-1 ring-sky-400'
+                    : 'border-slate-200 bg-white hover:border-sky-300 hover:bg-slate-50'
                     }`}
                 >
                   <div className="flex items-center space-x-2.5 min-w-0 pr-2">
@@ -346,8 +346,8 @@ export const PrefectureRouteMapPage: React.FC = () => {
                   </div>
                   <span
                     className={`px-2 py-0.5 rounded-full text-[11px] font-bold shrink-0 ${isChecked
-                        ? 'bg-sky-600 text-white'
-                        : 'bg-sky-100 text-sky-800'
+                      ? 'bg-sky-600 text-white'
+                      : 'bg-sky-100 text-sky-800'
                       }`}
                   >
                     {line.totalListings}
@@ -368,8 +368,8 @@ export const PrefectureRouteMapPage: React.FC = () => {
               onClick={handleSearchSelectedLines}
               disabled={selectedLineIds.length === 0}
               className={`px-8 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer ${selectedLineIds.length > 0
-                  ? 'bg-gradient-to-r from-sky-600 to-blue-700 text-white hover:from-sky-700 hover:to-blue-800 shadow-sky-600/20'
-                  : 'bg-slate-300 text-slate-500 cursor-not-allowed shadow-none'
+                ? 'bg-gradient-to-r from-sky-600 to-blue-700 text-white hover:from-sky-700 hover:to-blue-800 shadow-sky-600/20'
+                : 'bg-slate-300 text-slate-500 cursor-not-allowed shadow-none'
                 }`}
             >
               <Search className="w-4 h-4" />

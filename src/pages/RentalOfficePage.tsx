@@ -95,7 +95,7 @@ const RentalOfficePage: React.FC = () => {
           breadcrumbCurrent="Office for Rent"
         />
 
-        {/* 2. ATHOME ALIGNED 5-TAB OFFICE SEARCH NAVIGATION SYSTEM */}
+        {/* 2. ALIGNED 5-TAB OFFICE SEARCH NAVIGATION SYSTEM */}
         <OfficeTypeSearch onOpenPrefectureModal={() => setIsPrefectureModalOpen(true)} />
 
         {/* 3. Interactive Japan Map Search Panel */}
@@ -213,4 +213,4 @@ const RentalOfficePage: React.FC = () => {
   );
 };
 
-export default RentalOfficePage;
+export default RentalOfficePage;
