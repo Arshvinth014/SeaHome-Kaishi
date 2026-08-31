@@ -25,6 +25,7 @@ import SeahomeRentalParkingDetailPage from './pages/SeahomeRentalParkingDetailPa
 import WarehousePage from './pages/WarehousePage';
 import SeahomeRentalWarehouseDetailPage from './pages/SeahomeRentalWarehouseDetailPage';
 import SeahomeRentalWarehouseCityListPage from './pages/SeahomeRentalWarehouseCityListPage';
+import SeahomeRentalWarehouseStationListPage from './pages/SeahomeRentalWarehouseStationListPage';
 import RentalBuildingOtherPage from './pages/RentalBuildingOtherPage';
 import JapanHotelsPage from './pages/JapanHotelsPage';
 import JapanVillasPage from './pages/JapanVillasPage';
@@ -132,6 +133,8 @@ function App() {
           <Route path="warehouse/detail/:warehouseId" element={<SeahomeRentalWarehouseDetailPage />} />
           <Route path="rental-warehouse/:prefectureSlug/:citySlug/list" element={<SeahomeRentalWarehouseCityListPage />} />
           <Route path="rent_souko/:prefectureSlug/:citySlug/list" element={<SeahomeRentalWarehouseCityListPage />} />
+          <Route path="rental-warehouse/:prefectureSlug/:stationSlug/station-list" element={<SeahomeRentalWarehouseStationListPage />} />
+          <Route path="rent_souko/:prefectureSlug/:stationSlug/station-list" element={<SeahomeRentalWarehouseStationListPage />} />
           <Route path="rental-building-other" element={<RentalBuildingOtherPage />} />
           <Route
             path="rental/search-by-line-station/:locationSlug"

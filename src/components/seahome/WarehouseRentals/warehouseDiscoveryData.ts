@@ -351,22 +351,153 @@ export const NOTABLE_CITIES_WAREHOUSE: NamedLink[] = [
 ];
 
 export const STATIONS_TO_WATCH_WAREHOUSE: NamedLink[] = [
-    { label: 'Hirano Station', path: '/properties?station=hirano' },
-    { label: 'Eganosho Station', path: '/properties?station=eganosho' },
-    { label: 'Bentencho Station', path: '/properties?station=bentencho' },
-    { label: 'Shin-Nagata Station', path: '/properties?station=shin-nagata' },
-    { label: 'Tokuan Station', path: '/properties?station=tokuan' },
-    { label: 'Goshijima Station', path: '/properties?station=goshijima' },
-    { label: 'Kashima Station', path: '/properties?station=kashima' },
-    { label: 'Minami-Suita Station', path: '/properties?station=minami-suita' },
-    { label: 'Kizuri-Kamikita Station', path: '/properties?station=kizuri-kamikita' },
-    { label: 'Kanzakigawa Station', path: '/properties?station=kanzakigawa' },
-    { label: 'Sonoda Station', path: '/properties?station=sonoda' },
-    { label: 'Shonai Station', path: '/properties?station=shonai' },
-    { label: 'Asashiobashi Station', path: '/properties?station=asashiobashi' },
-    { label: 'Nagata Station', path: '/properties?station=nagata' },
-    { label: 'Minami-Settsu Station', path: '/properties?station=minami-settsu' },
+    { label: 'Hirano Station', path: '/seahome-real-estates/rental-warehouse/osaka/hirano-st/station-list' },
+    { label: 'Eganosho Station', path: '/seahome-real-estates/rental-warehouse/osaka/eganosho-st/station-list' },
+    { label: 'Bentencho Station', path: '/seahome-real-estates/rental-warehouse/osaka/bentencho-st/station-list' },
+    { label: 'Shin-Nagata Station', path: '/seahome-real-estates/rental-warehouse/hyogo/shin-nagata-st/station-list' },
+    { label: 'Tokuan Station', path: '/seahome-real-estates/rental-warehouse/osaka/tokuan-st/station-list' },
+    { label: 'Goshijima Station', path: '/seahome-real-estates/rental-warehouse/osaka/goshijima-st/station-list' },
+    { label: 'Kashima Station', path: '/seahome-real-estates/rental-warehouse/osaka/kashima-st/station-list' },
+    { label: 'Minami-Suita Station', path: '/seahome-real-estates/rental-warehouse/osaka/minami-suita-st/station-list' },
+    { label: 'Kizuri-Kamikita Station', path: '/seahome-real-estates/rental-warehouse/osaka/kizuri-kamikita-st/station-list' },
+    { label: 'Kanzakigawa Station', path: '/seahome-real-estates/rental-warehouse/osaka/kanzakigawa-st/station-list' },
+    { label: 'Sonoda Station', path: '/seahome-real-estates/rental-warehouse/hyogo/sonoda-st/station-list' },
+    { label: 'Shonai Station', path: '/seahome-real-estates/rental-warehouse/osaka/shonai-st/station-list' },
+    { label: 'Asashiobashi Station', path: '/seahome-real-estates/rental-warehouse/osaka/asashiobashi-st/station-list' },
+    { label: 'Nagata Station', path: '/seahome-real-estates/rental-warehouse/osaka/nagata-st/station-list' },
+    { label: 'Minami-Settsu Station', path: '/seahome-real-estates/rental-warehouse/osaka/minami-settsu-st/station-list' },
 ];
+
+export function getWarehouseStationListData(stationSlug: string, prefectureSlug: string) {
+    const capitalizedPref = prefectureSlug ? prefectureSlug.charAt(0).toUpperCase() + prefectureSlug.slice(1) : 'Osaka';
+    let stationName = 'Hirano Station';
+    let railwayLine = 'JR Yamatoji Line / Osaka Metro Tanimachi Line';
+
+    if (stationSlug.includes('eganosho')) {
+        stationName = 'Eganosho Station';
+        railwayLine = 'Kintetsu Minami-Osaka Line';
+    } else if (stationSlug.includes('bentencho')) {
+        stationName = 'Bentencho Station';
+        railwayLine = 'JR Osaka Loop Line / Osaka Metro Chuo Line';
+    } else if (stationSlug.includes('shin-nagata')) {
+        stationName = 'Shin-Nagata Station';
+        railwayLine = 'JR Kobe Line / Kobe Municipal Subway';
+    } else if (stationSlug.includes('tokuan')) {
+        stationName = 'Tokuan Station';
+        railwayLine = 'JR Gakken-Toshi Line';
+    } else if (stationSlug.includes('kashima')) {
+        stationName = 'Kashima Station';
+        railwayLine = 'JR Tozai Line';
+    } else if (stationSlug.includes('sonoda')) {
+        stationName = 'Sonoda Station';
+        railwayLine = 'Hankyu Kobe Main Line';
+    } else if (stationSlug.includes('shonai')) {
+        stationName = 'Shonai Station';
+        railwayLine = 'Hankyu Takarazuka Main Line';
+    } else if (stationSlug.includes('asashiobashi')) {
+        stationName = 'Asashiobashi Station';
+        railwayLine = 'Osaka Metro Chuo Line';
+    }
+
+    const cards: WarehouseCityListingCard[] = [
+        {
+            id: 'w1',
+            listingCode: 'WH-STN-6987482007',
+            title: `Logistics Storage & Rental Warehouse near ${stationName}`,
+            propertyName: `${stationName} Transit Logistics Center Bay A`,
+            rentYen: 310000,
+            rentDisplay: '310,000 yen',
+            commonFeeDisplay: '18,000 yen / mo',
+            depositDisplay: '2 months',
+            keyMoneyDisplay: '1 month',
+            usableAreaM2: '168.00 m²',
+            usableAreaTsubo: '50.82 tsubo',
+            ceilingHeight: '6.2m Clearance',
+            floorLoadCapacity: '2.5 tons / m²',
+            structure: 'Steel Frame 1st Floor (Drive-In)',
+            shutterDimensions: 'W 5.0m x H 4.6m Gate',
+            address: `Hirano Ward, Osaka City, ${capitalizedPref} Prefecture`,
+            accessStation: `6-min walk from ${stationName} (${railwayLine})`,
+            imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+            tags: ['10-Ton Truck Loading Ramp', '3-Phase 200V Power', 'Office Mezzanine', 'Electric Shutter'],
+            isNewListing: true,
+        },
+        {
+            id: 'w2',
+            listingCode: 'WH-STN-7482019482',
+            title: `High Clearance Freight Depot & Distribution Yard near ${stationName}`,
+            propertyName: `${stationName} Cargo Transit Hub`,
+            rentYen: 520000,
+            rentDisplay: '520,000 yen',
+            commonFeeDisplay: '25,000 yen / mo',
+            depositDisplay: '3 months',
+            keyMoneyDisplay: '1 month',
+            usableAreaM2: '340.50 m²',
+            usableAreaTsubo: '103.00 tsubo',
+            ceilingHeight: '6.8m Clearance',
+            floorLoadCapacity: '3.5 tons / m²',
+            structure: 'Reinforced Concrete & Steel Heavy Structure',
+            shutterDimensions: 'W 5.5m x H 5.0m Double Gate',
+            address: `Near ${stationName}, ${capitalizedPref} Prefecture`,
+            accessStation: `4-min walk from ${stationName} (${railwayLine})`,
+            imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
+            tags: ['Container Truck Dock', 'Overhead Crane Hoist', '24/7 Access CCTV', 'Sprinklers'],
+            isNewListing: true,
+        },
+        {
+            id: 'w3',
+            listingCode: 'WH-STN-8193049201',
+            title: `Compact Industrial Storage & Equipment Bay near ${stationName}`,
+            propertyName: `${stationName} Commercial Storage Unit B`,
+            rentYen: 175000,
+            rentDisplay: '175,000 yen',
+            commonFeeDisplay: '12,000 yen / mo',
+            depositDisplay: '2 months',
+            keyMoneyDisplay: 'Zero Key Money',
+            usableAreaM2: '92.40 m²',
+            usableAreaTsubo: '27.95 tsubo',
+            ceilingHeight: '5.5m Clearance',
+            floorLoadCapacity: '2.0 tons / m²',
+            structure: 'Steel Frame Ground Floor Drive-in',
+            shutterDimensions: 'W 4.5m x H 4.2m Roll-up Shutter',
+            address: `Adjacent to ${stationName}, ${capitalizedPref} Prefecture`,
+            accessStation: `9-min walk from ${stationName} (${railwayLine})`,
+            imageUrl: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80',
+            tags: ['Zero Key Money', 'Direct Truck Access', '24/7 Security Access', 'LED Bay Lighting'],
+        },
+        {
+            id: 'w4',
+            listingCode: 'WH-STN-9038102948',
+            title: `2-Story Logistics Facility with Freight Elevator near ${stationName}`,
+            propertyName: `${stationName} Cargo Tower & Storage Facility`,
+            rentYen: 950000,
+            rentDisplay: '950,000 yen',
+            commonFeeDisplay: '45,000 yen / mo',
+            depositDisplay: '3 months',
+            keyMoneyDisplay: '1 month',
+            usableAreaM2: '620.00 m²',
+            usableAreaTsubo: '187.55 tsubo',
+            ceilingHeight: '6.0m Clearance per floor',
+            floorLoadCapacity: '2.2 tons / m²',
+            structure: 'Steel Frame 2-Story Cargo Facility',
+            shutterDimensions: 'W 5.2m x H 4.8m Shutter Ramp',
+            address: `Expressway Arterial near ${stationName}, ${capitalizedPref} Prefecture`,
+            accessStation: `11-min walk / 3-min drive from ${stationName}`,
+            imageUrl: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80',
+            tags: ['Freight Elevator (3.5t)', '2-Story Office Suite', 'Reserved Truck Bays', 'Sprinklers'],
+        },
+    ];
+
+    return {
+        prefectureSlug,
+        prefectureName: capitalizedPref,
+        stationSlug,
+        stationName,
+        railwayLine,
+        totalCount: cards.length,
+        cards,
+    };
+}
 
 export const AFFILIATED_STORE_BANNER_WAREHOUSE_DATA = {
     title: 'Find a SeaHome affiliated store',
