@@ -123,7 +123,7 @@ export const RentalShopBottom: React.FC = () => {
           <div className="flex-1 space-y-2 text-center sm:text-left">
             <button
               type="button"
-              onClick={() => handleNavigate('/seahome-real-estates/rental-shop')}
+              onClick={() => handleNavigate('/seahome-real-estates/estate')}
               className="inline-flex items-center space-x-1.5 text-base sm:text-lg font-bold text-sky-700 hover:text-sky-900 hover:underline tracking-tight group"
             >
               <Search className="w-4 h-4 text-sky-600 group-hover:scale-110 transition-transform" />

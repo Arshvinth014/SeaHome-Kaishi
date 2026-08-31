@@ -132,7 +132,7 @@ export const AFFILIATED_STORE_BANNER_DATA = {
     title: 'Find a SeaHome affiliated store',
     description: "Find your perfect property quickly! Directly entrust your property search to the real estate company that's right for you!",
     imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80',
-    link: '/properties?type=parking',
+    link: '/seahome-real-estates/estate',
 };
 
 export const FOOTER_DISCLAIMER_PARKING_TEXT =

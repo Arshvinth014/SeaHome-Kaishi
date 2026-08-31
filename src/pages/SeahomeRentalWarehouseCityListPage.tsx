@@ -41,7 +41,6 @@ export const SeahomeRentalWarehouseCityListPage: React.FC = () => {
   // Checkbox Filters
   const [zeroDeposit, setZeroDeposit] = useState<boolean>(false);
   const [zeroKeyMoney, setZeroKeyMoney] = useState<boolean>(false);
-  const [immediateHandover, setImmediateHandover] = useState<boolean>(false);
   const [ceiling6m, setCeiling6m] = useState<boolean>(false);
   const [truckRamp, setTruckRamp] = useState<boolean>(false);
   const [electricShutter, setElectricShutter] = useState<boolean>(false);
@@ -60,7 +59,6 @@ export const SeahomeRentalWarehouseCityListPage: React.FC = () => {
     setMaxArea(0);
     setZeroDeposit(false);
     setZeroKeyMoney(false);
-    setImmediateHandover(false);
     setCeiling6m(false);
     setTruckRamp(false);
     setElectricShutter(false);
