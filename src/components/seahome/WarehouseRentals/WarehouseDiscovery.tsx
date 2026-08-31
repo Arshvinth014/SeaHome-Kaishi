@@ -82,7 +82,10 @@ export const WarehouseDiscovery: React.FC<WarehouseDiscoveryProps> = ({ onNaviga
                         {WHAT_S_NEW_WAREHOUSE_LISTINGS.map((item: WarehouseListingItem) => (
                             <div
                                 key={item.id}
-                                onClick={() => handleLinkClick(item.link)}
+                                onClick={() => {
+                                    const detailUrl = `/seahome-real-estates/rental-warehouse/detail/${item.id}`;
+                                    window.open(detailUrl, '_blank', 'noopener,noreferrer');
+                                }}
                                 className="group/card flex w-44 shrink-0 flex-col cursor-pointer rounded-lg border border-gray-100 bg-white p-2.5 shadow-2xs transition-all duration-200 hover:border-blue-400 hover:shadow-md sm:w-48"
                             >
                                 <div className="mb-1.5 flex items-center justify-between">
