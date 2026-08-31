@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Building, 
   ChevronLeft, 
@@ -13,6 +14,7 @@ import {
 import { shoppingDistricts, whatsNewProperties } from '../../../config/rentalShop';
 
 export const RentalShopProperties: React.FC = () => {
+  const navigate = useNavigate();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = (direction: 'left' | 'right') => {
@@ -37,33 +39,37 @@ export const RentalShopProperties: React.FC = () => {
 
         {/* District Grid */}
         <div className="p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {shoppingDistricts.map((district) => (
-            <div
-              key={district.id}
-              className="group relative h-28 sm:h-32 rounded-lg overflow-hidden border border-gray-200 shadow-xs hover:shadow-md transition-all duration-300 cursor-pointer"
-            >
-              {/* Background Image */}
-              <img
-                src={district.img}
-                alt={`${district.region} ${district.name}`}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+          {shoppingDistricts.map((district) => {
+            const districtSlug = district.name.toLowerCase().replace(/\s+/g, '-');
+            return (
+              <div
+                key={district.id}
+                onClick={() => navigate(`/seahome-real-estates/rental-shop/shopping-district/${districtSlug}/list`)}
+                className="group relative h-28 sm:h-32 rounded-lg overflow-hidden border border-gray-200 shadow-xs hover:shadow-md transition-all duration-300 cursor-pointer"
+              >
+                {/* Background Image */}
+                <img
+                  src={district.img}
+                  alt={`${district.region} ${district.name}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
 
-              {/* District Label Overlay */}
-              <div className="absolute bottom-0 inset-x-0 p-3 flex items-end justify-between bg-white/30 backdrop-blur-md border-t border-white/20">
-                <div className="truncate">
-                  <span className="block text-[11px] font-medium text-gray-800 tracking-wide uppercase truncate">
-                    {district.region}
-                  </span>
-                  <span className="block text-sm sm:text-base font-bold text-gray-900 truncate">
-                    {district.name}
-                  </span>
+                {/* District Label Overlay */}
+                <div className="absolute bottom-0 inset-x-0 p-3 flex items-end justify-between bg-white/30 backdrop-blur-md border-t border-white/20">
+                  <div className="truncate">
+                    <span className="block text-[11px] font-medium text-gray-800 tracking-wide uppercase truncate">
+                      {district.region}
+                    </span>
+                    <span className="block text-sm sm:text-base font-bold text-gray-900 truncate">
+                      {district.name}
+                    </span>
+                  </div>
+                  <MapPin className="w-4 h-4 text-blue-600 shrink-0 ml-1 opacity-90 group-hover:translate-x-0.5 transition-transform" />
                 </div>
-                <MapPin className="w-4 h-4 text-blue-600 shrink-0 ml-1 opacity-90 group-hover:translate-x-0.5 transition-transform" />
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
