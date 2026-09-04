@@ -29,7 +29,10 @@ import SeahomeRentalWarehouseStationListPage from './pages/SeahomeRentalWarehous
 import SeahomeAffiliatedStorePage from './pages/SeahomeAffiliatedStorePage';
 import SeahomeRentalShopDistrictListPage from './pages/SeahomeRentalShopDistrictListPage';
 import SeahomeRentalShopDetailPage from './pages/SeahomeRentalShopDetailPage';
+import SeahomeRentalShopCriteriaPage from './pages/SeahomeRentalShopCriteriaPage';
 import SeahomeRentalDetailPage from './pages/SeahomeRentalDetailPage';
+import SeahomeRentalOfficeDetailPage from './pages/SeahomeRentalOfficeDetailPage';
+import SeahomeRentalOfficeThemePage from './pages/SeahomeRentalOfficeThemePage';
 import RentalBuildingOtherPage from './pages/RentalBuildingOtherPage';
 import JapanHotelsPage from './pages/JapanHotelsPage';
 import JapanVillasPage from './pages/JapanVillasPage';
@@ -113,14 +116,18 @@ function App() {
           <Route path="rental-shop/route-map" element={<PrefectureRouteMapPage />} />
           <Route path="rental-shop/:categorySlug" element={<RentalShopCategoryPage />} />
           <Route path="rental-office" element={<RentalOfficePage />} />
-          <Route path="rental-office/size/:sizeId" element={<RentalOfficeCategoryPage />} />
-          <Route path="rental-office/feature/:featureId" element={<RentalOfficeCategoryPage />} />
+          <Route path="rental-office/detail/:officeId" element={<SeahomeRentalOfficeDetailPage />} />
+          <Route path="rent_office/:officeId" element={<SeahomeRentalOfficeDetailPage />} />
+          <Route path="rental-office/theme/:themeId" element={<SeahomeRentalOfficeThemePage />} />
+          <Route path="rent_office/theme/:themeId" element={<SeahomeRentalOfficeThemePage />} />
+          <Route path="rental-office/feature/:featureId" element={<SeahomeRentalOfficeThemePage />} />
           <Route path="rental-office/category/:categorySlug" element={<RentalOfficeCategoryPage />} />
           <Route path="rental-office/:prefectureSlug/city" element={<PrefectureCityPage />} />
           <Route path="rental-office/:prefectureSlug/city/:citySlug" element={<PrefectureCityPage />} />
           <Route path="rental-office/:prefectureSlug/route-map" element={<PrefectureRouteMapPage />} />
           <Route path="rental-office/route-map" element={<PrefectureRouteMapPage />} />
           <Route path="rental-office/:sizeId" element={<RentalOfficeCategoryPage />} />
+          <Route path="rental-office/:prefectureSlug/:stationSlug/station-list" element={<SeahomeRentalWarehouseStationListPage />} />
           <Route path="rental/search-by-route-map" element={<PrefectureRouteMapPage />} />
           <Route path="rental/search-by-route-map/:prefectureSlug" element={<PrefectureRouteMapPage />} />
           <Route path="rental-land" element={<RentalLandPage />} />
@@ -143,6 +150,8 @@ function App() {
           <Route path="affiliated-stores" element={<SeahomeAffiliatedStorePage />} />
           <Route path="rental-shop/shopping-district/:districtSlug/list" element={<SeahomeRentalShopDistrictListPage />} />
           <Route path="rent_store/hankagai/:districtSlug/list" element={<SeahomeRentalShopDistrictListPage />} />
+          <Route path="rental-shop/criteria/:criteriaSlug" element={<SeahomeRentalShopCriteriaPage />} />
+          <Route path="rent_store/criteria/:criteriaSlug" element={<SeahomeRentalShopCriteriaPage />} />
           <Route path="rental-shop/detail/:storeId" element={<SeahomeRentalShopDetailPage />} />
           <Route path="rent_store/:storeId" element={<SeahomeRentalShopDetailPage />} />
           <Route path="rental/detail/:listingId" element={<SeahomeRentalDetailPage />} />
