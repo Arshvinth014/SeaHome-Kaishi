@@ -49,7 +49,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80',
                 badge: 'Recommended',
                 icon: MessageSquare,
-                link: '/properties?filter=recommended-comments',
+                link: '/seahome-real-estates/rental-office/theme/criteria-1',
             },
             {
                 id: 'criteria-2',
@@ -58,7 +58,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80',
                 badge: 'Ground Floor',
                 icon: Building,
-                link: '/properties?filter=ground-floor',
+                link: '/seahome-real-estates/rental-office/theme/criteria-2',
             },
             {
                 id: 'criteria-3',
@@ -67,7 +67,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=400&q=80',
                 badge: 'Parking',
                 icon: Car,
-                link: '/properties?filter=parking',
+                link: '/seahome-real-estates/rental-office/theme/criteria-3',
             },
             {
                 id: 'criteria-4',
@@ -76,7 +76,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80',
                 badge: 'Ready to Use',
                 icon: Zap,
-                link: '/properties?filter=immediate-occupancy',
+                link: '/seahome-real-estates/rental-office/theme/criteria-4',
             },
         ],
         extraItems: [
@@ -87,7 +87,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=400&q=80',
                 badge: 'Furnished',
                 icon: Briefcase,
-                link: '/properties?filter=furnished',
+                link: '/seahome-real-estates/rental-office/theme/criteria-5',
             },
             {
                 id: 'criteria-6',
@@ -96,7 +96,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
                 badge: '24/7 Security',
                 icon: ShieldCheck,
-                link: '/properties?filter=24h-access',
+                link: '/seahome-real-estates/rental-office/theme/criteria-6',
             },
         ],
     },
@@ -111,7 +111,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=400&q=80',
                 badge: '< 10 tsubo',
                 icon: User,
-                link: '/properties?size=under-10-tsubo',
+                link: '/seahome-real-estates/rental-office/theme/size-1',
             },
             {
                 id: 'size-2',
@@ -120,7 +120,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&q=80',
                 badge: '< 20 tsubo',
                 icon: Users,
-                link: '/properties?size=under-20-tsubo',
+                link: '/seahome-real-estates/rental-office/theme/size-2',
             },
             {
                 id: 'size-3',
@@ -129,7 +129,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=400&q=80',
                 badge: '300+ tsubo',
                 icon: Building2,
-                link: '/properties?size=300-tsubo-plus',
+                link: '/seahome-real-estates/rental-office/theme/size-3',
             },
         ],
     },
@@ -144,7 +144,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=400&q=80',
                 badge: 'Zero Deposit',
                 icon: Tag,
-                link: '/properties?cost=zero-deposit',
+                link: '/seahome-real-estates/rental-office/theme/cost-1',
             },
             {
                 id: 'cost-2',
@@ -153,7 +153,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=400&q=80',
                 badge: 'Rent Free',
                 icon: Gift,
-                link: '/properties?cost=rent-free',
+                link: '/seahome-real-estates/rental-office/theme/cost-2',
             },
             {
                 id: 'cost-3',
@@ -162,7 +162,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=400&q=80',
                 badge: '< ¥50,000',
                 icon: JapaneseYen,
-                link: '/properties?rent=under-50k',
+                link: '/seahome-real-estates/rental-office/theme/cost-3',
             },
             {
                 id: 'cost-4',
@@ -171,7 +171,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
                 badge: '< ¥100,000',
                 icon: Coins,
-                link: '/properties?rent=under-100k',
+                link: '/seahome-real-estates/rental-office/theme/cost-4',
             },
             {
                 id: 'cost-5',
@@ -180,7 +180,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80',
                 badge: '< ¥200,000',
                 icon: CircleDollarSign,
-                link: '/properties?rent=under-200k',
+                link: '/seahome-real-estates/rental-office/theme/cost-5',
             },
         ],
     },
@@ -195,7 +195,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&w=400&q=80',
                 badge: '≤ 5 min walk',
                 icon: Footprints,
-                link: '/properties?walk=5min',
+                link: '/seahome-real-estates/rental-office/theme/distance-1',
             },
             {
                 id: 'distance-2',
@@ -204,7 +204,7 @@ export const OFFICE_SPECIAL_FEATURES_DATA: FeatureSection[] = [
                 imageUrl: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=400&q=80',
                 badge: '≤ 10 min walk',
                 icon: Train,
-                link: '/properties?walk=10min',
+                link: '/seahome-real-estates/rental-office/theme/distance-2',
             },
         ],
     },

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   SlidersHorizontal,
   Building2,
@@ -62,34 +63,37 @@ export const RentalShopConditionSearch: React.FC = () => {
 
               {/* Chips */}
               <div className="flex flex-wrap gap-2">
-                {group.items.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="
-                      inline-flex
-                      items-center
-                      gap-1.5
-                      rounded-full
-                      border
-                      border-slate-200
-                      bg-white
-                      px-3.5
-                      py-2
-                      text-sm
-                      text-slate-700
-                      transition-all
-                      duration-200
-                      hover:border-blue-300
-                      hover:bg-blue-50
-                      hover:text-blue-700
-                      hover:shadow-sm
-                    "
-                  >
-                    <ChevronRight className="w-3.5 h-3.5" />
-                    {item}
-                  </a>
-                ))}
+                {group.items.map((item, idx) => {
+                  const slug = item.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                  return (
+                    <Link
+                      key={idx}
+                      to={`/seahome-real-estates/rental-shop/criteria/${slug}`}
+                      className="
+                        inline-flex
+                        items-center
+                        gap-1.5
+                        rounded-full
+                        border
+                        border-slate-200
+                        bg-white
+                        px-3.5
+                        py-2
+                        text-sm
+                        text-slate-700
+                        transition-all
+                        duration-200
+                        hover:border-blue-300
+                        hover:bg-blue-50
+                        hover:text-blue-700
+                        hover:shadow-sm
+                      "
+                    >
+                      <ChevronRight className="w-3.5 h-3.5" />
+                      {item}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           ))}
